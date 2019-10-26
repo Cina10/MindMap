@@ -5,46 +5,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawSeriesChart);
-
-    function drawSeriesChart() {
-
-      var data = google.visualization.arrayToDataTable([
-        ['ID', 'Life Expectancy', 'Fertility Rate', 'Region',     'Population'],
-        ['CAN',    80.66,              1.67,      'North America',  33739900],
-        ['DEU',    79.84,              1.36,      'Europe',         81902307],
-        ['DNK',    78.6,               1.84,      'Europe',         5523095],
-        ['EGY',    72.73,              2.78,      'Middle East',    79716203],
-        ['GBR',    80.05,              2,         'Europe',         61801570],
-        ['IRN',    72.49,              1.7,       'Middle East',    73137148],
-        ['IRQ',    68.09,              4.77,      'Middle East',    31090763],
-        ['ISR',    81.55,              2.96,      'Middle East',    7485600],
-        ['RUS',    68.6,               1.54,      'Europe',         141850000],
-        ['USA',    78.09,              2.05,      'North America',  307007000]
-      ]);
-
-      var options = {
-        title: 'Correlation between life expectancy, fertility rate ' +
-               'and population of some world countries (2010)',
-        hAxis: {title: 'Life Expectancy'},
-        vAxis: {title: 'Fertility Rate'},
-        bubble: {textStyle: {fontSize: 11}}      };
-
-      var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
-      chart.draw(data, options);
-    }
-    </script>
-
 <!--bootstrap-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
 
-<body>
 <!-- nav -->
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -59,38 +24,16 @@
     </ul>
   </div>
 </nav>
-<form action="#">
-  Keyword: <input type="text" name="keyword" required="required">
-  <br>
-  Upload an audio file: <input type="file" name="speech" accept="audio/*" required="required">
-  <input type="submit">
-</form>
-<br>
-<p>OR</p>
-<form action="#" id="usrform">
-  Keyword: <input type="text" name="keyword" required="required">
-  <input type="submit">
-</form>
-<br>
-<textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Paste text here." required="required">
-</textarea>
-<div id="series_chart_div" style="width: 900px; height: 500px;"></div>
 
+</head>
 
-<script>
-  function required() {
-    var empt = document.forms["form1"]["text1"].value;
-    if (empt == "") {
-      alert("Please input a Value");
-      return false;
-    } else {
-      alert('Code has accepted : you can try another');
-      return true;
-    }
-  }
-</script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<body>
+<!--- container for map -->
+  <div>
+  <script>
+
+  </script>
+  </div>
 </body>
+
 </html>

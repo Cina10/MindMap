@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MindMap</title>
+<center><title>MindMap</title></center>
+	
 <script type="text/javascript" src="https://unpkg.com/vis-network@latest/dist/vis-network.min.js"></script>
 <link href="https://unpkg.com/vis-network@latest/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,29 +13,40 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+<style type="text/css">
+	#mynetwork{
+		width: 600px;
+		height: 400px;
+		border: 1px solid lightgray;
+	}
+	</style>
+	</head>
+	<body>
 <!-- nav -->
-<nav class="navbar navbar-default">
+<nav class="navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header">
+    <div class="navbar-header navbar-center">
       <a class="navbar-brand" href="#">Mind Map</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#"></a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
-    </ul>
+    
   </div>
 </nav>
+	<div id="mynetwork" height="500px"></div>
+	<div class="row">
+		
 <form action="#">
   Keyword: <input type="text" name="keyword" required="required">
   <br>
   Upload an audio file: <input type="file" name="speech" accept="audio/*" required="required">
   <input type="submit">
 </form>
-<br>
+			
+
+		
 <p>OR</p>
+			
+		
+	
 <form action="#" id="usrform">
   Keyword: <input type="text" name="keyword" required="required">
   <input type="submit">
@@ -41,9 +54,10 @@
 <br>
 <textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Paste text here." required="required">
 </textarea>
+		
+</div>
 
 
-<div id="mynetwork" height="500px"></div>
 
 
 
@@ -79,17 +93,7 @@ function nodes(relev) {
     count++;
   }
   return result;
-/*  var working = JSON.parse(relev);
-  var ret = [];
-  var count = 0;
-  for (k in working) {
-    if (working.hasOwnProperty(k)) {
 
-      count++;
-
-    }
-  }
-  return working;*/
 }
 
 
@@ -101,6 +105,6 @@ function nodes(relev) {
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
 
+	</body>
 </html>

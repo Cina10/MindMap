@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <title>MindMap</title>
+<script type="text/javascript" src="https://unpkg.com/vis-network@latest/dist/vis-network.min.js"></script>
+<link href="https://unpkg.com/vis-network@latest/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,78 +26,81 @@
     </ul>
   </div>
 </nav>
+<form action="#">
+  Keyword: <input type="text" name="keyword" required="required">
+  <br>
+  Upload an audio file: <input type="file" name="speech" accept="audio/*" required="required">
+  <input type="submit">
+</form>
+<br>
+<p>OR</p>
+<form action="#" id="usrform">
+  Keyword: <input type="text" name="keyword" required="required">
+  <input type="submit">
+</form>
+<br>
+<textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Paste text here." required="required">
+</textarea>
 
-</head>
 
-<body>
-<!--- container for map -->
-  <div id = "mynetwork">
-  <script>
+<div id="mynetwork" height="500px"></div>
 
-var nodes = null;
-var edges = null;
-var network = null;
 
-function draw() {
-  // create people.
-  // value corresponds with the age of the person
-  nodes = [
-    { id: 1, value: 2, label: "Algie" },
-    { id: 2, value: 31, label: "Alston" },
-    { id: 3, value: 12, label: "Barney" },
-    { id: 4, value: 16, label: "Coley" },
-    { id: 5, value: 17, label: "Grant" },
-    { id: 6, value: 15, label: "Langdon" },
-    { id: 7, value: 6, label: "Lee" },
-    { id: 8, value: 5, label: "Merlin" },
-    { id: 9, value: 30, label: "Mick" },
-    { id: 10, value: 18, label: "Tod" }
-  ];
 
-  // create connections between people
-  // value corresponds with the amount of contact between two people
-  edges = [
-    { from: 2, to: 8, value: 3 },
-    { from: 2, to: 9, value: 5 },
-    { from: 2, to: 10, value: 1 },
-    { from: 4, to: 6, value: 8 },
-    { from: 5, to: 7, value: 2 },
-    { from: 4, to: 5, value: 1 },
-    { from: 9, to: 10, value: 2 },
-    { from: 2, to: 3, value: 6 },
-    { from: 3, to: 9, value: 4 },
-    { from: 5, to: 3, value: 1 },
-    { from: 2, to: 7, value: 4 }
-  ];
+<script type="text/javascript">
 
-  // Instantiate our network object.
-  var container = document.getElementById("mynetwork");
-  var data = {
-    nodes: nodes,
-    edges: edges
-  };
-  var options = {
-    nodes: {
-      shape: "dot",
-      scaling: {
-        customScalingFunction: function(min, max, total, value) {
-          return value / total;
-        },
-        min: 5,
-        max: 150
-      }
+var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
+var adj_matrix = [[1,1,1],[1,1,1]];
+
+var nodes = new vis.DataSet(nodes(json_data));
+
+var edges = new vis.DataSet([
+  {from: 1, to: 3},
+  {from: 1, to: 2},
+  {from: 2, to: 4},
+  {from: 2, to: 5},
+  {from: 3, to: 3}
+]);
+
+// create a network
+var container = document.getElementById('mynetwork');
+var data = {
+  nodes: nodes,
+  edges: edges
+};
+var options = {};
+var network = new vis.Network(container, data, options);
+
+function nodes(relev) {
+  var result = [];
+  var count = 1;
+  for (var i in relev) {
+    result.push({id: count, value: relev[i], label: i});
+    count++;
+  }
+  return result;
+/*  var working = JSON.parse(relev);
+  var ret = [];
+  var count = 0;
+  for (k in working) {
+    if (working.hasOwnProperty(k)) {
+
+      count++;
+
     }
-  };
-  network = new vis.Network(container, data, options);
+  }
+  return working;*/
 }
 
-window.addEventListener("load", () => {
-  draw();
-});
 
 
-  </script>
-  </div>
+
+
+
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@ from google.cloud import speech_v1
 from google.cloud.speech_v1 import enums
 
 
-def async_dictate(storage_uri, encoding):
+def async_dictate(storage_uri, encoding, sample_rate_hertz, language_code):
     """
     Transcribe long audio file from Cloud Storage using asynchronous speech
     recognition
@@ -16,12 +16,6 @@ def async_dictate(storage_uri, encoding):
 
     # storage_uri = 'gs://cloud-samples-data/speech/brooklyn_bridge.raw'
 
-    # Sample rate in Hertz of the audio data sent
-    sample_rate_hertz = 16000
-
-    # The language of the supplied audio
-    language_code = "en-US"
-    
     config = {
         "sample_rate_hertz": sample_rate_hertz,
         "language_code": language_code,
@@ -38,7 +32,7 @@ def async_dictate(storage_uri, encoding):
     for result in response.results:
         # First alternative is the most probable result
         alternative = result.alternatives[0]
-        text.append(format(alternative.transcript))
+        text.append(alternative.transcript)
     
     logging.info("Dictation successful.")
     

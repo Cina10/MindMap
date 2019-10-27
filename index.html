@@ -12,31 +12,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <style type="text/css">
-      * {
-        box-sizing: border-box;
-      }
+
       #mynetwork{
-        width: 90%;
-        height: 460px;
+        width: 100%;
+        height: 45em;
         margin: none;
+        padding: none;
         float: center;
       }
-      .navbar-header {
-        float: left;
-        padding: 15px;
+      h1 {
+        color: gray;
+        font-size: 4em;
+        float: center;
+      }
+      .header {
         text-align: center;
-        width: 100%;
-      }
-      .navbar-brand {
-        float:none;
-        font-size: 3em;
-      }
-      body {
-        text-indent: 2%;
+        height: 4em;
       }
       textarea{
         border: 0px;
-        text-indent: 2%;
         margin-left: 2em;
         width: 90%;
       }
@@ -44,19 +38,19 @@
         font-size:1.2em;
         color: white;
       }
+      .ind {
+        text-indent: 1%;
+      }
       .gridder{
         display: grid;
         grid-template-columns: 75% 25%;
-        grid-gap: 2px;
-        padding: 10px;
-
+        grid-gap: 0.5%;
       }
       .box1{
         background:lightskyblue;
       }
       .box2{
         background:lightsteelblue;
-
       }
       .box3{
         background:lightblue;
@@ -64,15 +58,14 @@
         padding: auto;
       }
 
-      nav {
-        padding: 0.5%;
-      }
-
     </style>
   </head>
 
   <body>
-    <!-- nav -->
+    <div class="header">
+      <h1>Mind Map</h1>
+    </div>
+    <!-- nav
     <nav class="navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header navbar-center">
@@ -80,36 +73,37 @@
         </div>
       </div>
     </nav>
-
+    -->
     <!-- network graphic -->
-    <div id="mynetwork" height="500px"></div>
+    <div id="mynetwork" height="500px" class="col-4"></div>
 
     <!-- input forms -->
     <div class="gridder">
-      <!-- form 1 -->
+
+    <!--
       <div class="box1">
         <form action="#">
-          <h5>Keyword</h5>
-          <input type="text" name="keyword" required="required" placeholder="Enter keyword" style="border:0px; margin-left: 2em;">
+          <h5 class="ind">Keyword</h5>
+          <input class="ind" type="text" name="keyword" required="required" placeholder="Enter keyword" style="border:0px; margin-left: 2em;">
           <br><br>
-          <h5>Video source</h5>
-          <input type="text" name="speech" required="required" placeholder="Enter URL" style="border:0px; margin-left: 2em;">
+          <h5 class="ind">Video source</h5>
+          <input class="ind" type="text" name="speech" required="required" placeholder="Enter URL" style="border:0px; margin-left: 2em;">
           <br><br>
           <input onclick="showTranscript()" type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
         </form>
       </div>
 
-      <!-- form 2 -->
       <div class="box3">
           <form action="#" id="usrform">
-            <h5>Enter transcript</h5>
+            <h5 class="ind">Enter transcript</h5>
             <br>
-            <textarea id="transcription" rows="10" cols="50" name="comment" form="usrform" placeholder="Paste text here" required="required"></textarea>
+            <textarea class="ind" id="transcription" rows="10" cols="50" name="comment" form="usrform" placeholder="Paste text here" required="required"></textarea>
             <br><br>
             <input type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
           </form>
           <br>
       </div>
+    -->
 
     </div>
 
@@ -127,7 +121,9 @@
     var edges = null;
     var network = null;
 
-    var freqmap = '[{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 33, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 55, label: "starfish"}]';
+    //these two variables should later be replaced by variable input
+    //(or something like that; I don't know proper terminology)
+    var freqmap = '[{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 17, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 16, label: "starfish"}]';
     var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
 
     function draw() {

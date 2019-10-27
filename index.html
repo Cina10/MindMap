@@ -5,6 +5,7 @@
     <script type="text/javascript" src="https://unpkg.com/vis-network@latest/dist/vis-network.min.js"></script>
     <link href="https://unpkg.com/vis-network@latest/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
     <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="style1.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--bootstrap-->
@@ -13,7 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <style type="text/css">
       * {
-        background-color: black;
+
       }
       #mynetwork {
         width: 73%;
@@ -21,17 +22,18 @@
         margin: 0;
         padding: 0;
         float: right;
+        background-color: transparent;
       }
       #userinputinfo {
         width: 27%;
-        height: 42em;
+        height: 45em;
         text-indent: 5%;
         padding: 0;
         float: left;
         background-color: #303030;
       }
       h1 {
-        color: #BFBFBF;
+        color: gray;
         font-size: 4em;
         margin: 0;
       }
@@ -86,7 +88,10 @@
   </head>
 
   <body>
-
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
     <div class="header">
       <h1>Mind Map</h1>
     </div>

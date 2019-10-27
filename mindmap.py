@@ -1,8 +1,10 @@
 import sys
 
+from google.cloud.speech_v1 import enums
+
 from dictation.dictate import async_dictate
 from processing.sanitize import sanitize
-from google.cloud.speech_v1 import enums
+from processing.analyze import textrank, similarity
 
 def run(gs_file_uri, dry_run=False, dry_run_file=None):
     if not dry_run:
@@ -12,9 +14,23 @@ def run(gs_file_uri, dry_run=False, dry_run_file=None):
         assert(dry_run_file != None)
         with open(dry_run_file) as f:
             dictation = f.read()
+    
+    print(dictation)
+
+    print("====================")
 
     sanitized_dictation = sanitize(dictation)
 
     print(sanitized_dictation)
 
-run(sys.argv[1], dry_run=True, dry_run_file="./resources/comics_that_ask_what_if.txt")
+    print("====================")
+
+    kw_w_pairs = textrank(sanitized_dictation, topn=20)
+    print(kw_w_pairs)
+
+    print("====================")
+
+    sim_mat = similarity(kw_w_pairs)
+    print(sim_mat)
+
+run(sys.argv[1], dry_run=True, dry_run_file="./resources/how_trees_bend_the_law_of_physics.txt")

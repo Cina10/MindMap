@@ -1,20 +1,6 @@
-.container-fluid{
-	height: 55px;
+
+body{
+    background-color: whitesmoke;
 }
 
-.navbar-header.navbar-center{
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%)
-}
-.column{
-	float: left;
-		width: 50%;
-}
-div{
-	column-count: 3;
-}
 
-#p {
-	align-content: center;
-}

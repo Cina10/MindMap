@@ -37,8 +37,7 @@ def merge_sent_array(sent_array, separator):
     merged_sent_txt = separator.join(sent_array) + separator
     return merged_sent_txt
 
-
-with open('../resources/comics_that_ask_what_if.txt') as f:
-    raw_text = f.read()
-
-print(merge_sent_array(segment(raw_text, True), '. '))
+# Blanket function for text sanitizing
+def sanitize(raw_text):
+    return merge_sent_array(segment(raw_text, True), '. ')
+ 

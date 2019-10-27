@@ -183,7 +183,7 @@
     //  var adjmat = [{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}];
         var freqmap = MINDMAP_FREQMAP_MATCH
         var adjmat = MINDMAP_ADJMAT_MATCH
-
+    
     function draw() {
       // create concepts
       // value corresponds with importance of concepts
@@ -227,7 +227,42 @@
       network = new vis.Network(container, data, options);
     }
 
+        function draw() {
+            // create concepts
+            // value corresponds with importance of concepts
+            nodes = eval(freqmap);
 
+            // create connections between concepts
+            // value corresponds with the relevance between people
+            edges = eval(adjmat);
+
+            // Instantiate our network object.
+            var container = document.getElementById("mynetwork");
+            var data = {
+                nodes: nodes,
+                edges: edges
+            };
+            var options = {
+                nodes: {
+                    shape: "dot",
+                    scaling: {
+                        customScalingFunction: function(min, max, total, value) {
+                            return value / total;
+                        },
+                        min: 5,
+                        max: 150
+                    }
+                },
+                interaction: {
+                    hover: true
+                }
+            };
+            network = new vis.Network(container, data, options);
+        }
+
+        window.addEventListener("load", () => {
+            draw();
+        });
 
         //var js_thing = JSON.parse(jsonthing);
         //var nodes = new vis.DataSet(eval(freqmap));

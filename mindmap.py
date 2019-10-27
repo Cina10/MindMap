@@ -34,6 +34,6 @@ def run(gs_file_uri, dry_run=False, dry_run_file=None):
     sim_mat = similarity(kw_w_pairs)
     print(sim_mat)
 
-    generate_json_pair(kw_w_pairs, sim_mat, "nodes.json", "edges.json")
+    generate_json_pair(kw_w_pairs, sim_mat, "./data/nodes.json", "./data/edges.json")
 
 run(sys.argv[1], dry_run=True, dry_run_file="./resources/how_trees_bend_the_law_of_physics.txt")

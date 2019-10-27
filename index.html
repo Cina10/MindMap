@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <title>MindMap</title>
     <script type="text/javascript" src="https://unpkg.com/vis-network@latest/dist/vis-network.min.js"></script>
     <link href="https://unpkg.com/vis-network@latest/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
@@ -85,7 +86,7 @@
       }
       */
     </style>
-  </head>
+</head>
 
   <body>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
@@ -99,11 +100,11 @@
 
     <!-- nav
     <nav class="navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header navbar-center">
-          <a class="navbar-brand" href="#">Mind Map</a>
+        <div class="container-fluid">
+            <div class="navbar-header navbar-center">
+                <a class="navbar-brand" href="#">Mind Map</a>
+            </div>
         </div>
-      </div>
     </nav>
     -->
 
@@ -169,9 +170,9 @@
 
     <script type="text/javascript">
 
-    var nodes = null;
-    var edges = null;
-    var network = null;
+        var nodes = null;
+        var edges = null;
+        var network = null;
 
     //these two variables should later be replaced by variable input
     //(or something like that; I don't know proper terminology)
@@ -217,48 +218,70 @@
       network = new vis.Network(container, data, options);
     }
 
-    window.addEventListener("load", () => {
-      draw();
-    });
+        function draw() {
+            // create concepts
+            // value corresponds with importance of concepts
+            nodes = eval(freqmap);
 
+            // create connections between concepts
+            // value corresponds with the relevance between people
+            edges = eval(adjmat);
 
+            // Instantiate our network object.
+            var container = document.getElementById("mynetwork");
+            var data = {
+                nodes: nodes,
+                edges: edges
+            };
+            var options = {
+                nodes: {
+                    shape: "dot",
+                    scaling: {
+                        customScalingFunction: function(min, max, total, value) {
+                            return value / total;
+                        },
+                        min: 5,
+                        max: 150
+                    }
+                },
+                interaction: {
+                    hover: true
+                }
+            };
+            network = new vis.Network(container, data, options);
+        }
 
-    //var js_thing = JSON.parse(jsonthing);
-    //var nodes = new vis.DataSet(eval(freqmap));
-    /*var valList = [];
-    for (var i = 0; i < js_thing.mapping.length; i++) {
-      valList.push(js_thing.mapping[i]);
-    }*/
-    //var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
-    /*var txt = [{id: 1, value: 35, label: "dog"},
-    {id: 2, value: 12, label: "cat"},
-    {id: 3, value: 333, label: "pet"},
-    {id: 4, value: 67, label: "giraffe"},
-    {id: 5, value: 55, label: "starfish"}];
-    //var arr = JSON.parse(txt);
+        window.addEventListener("load", () => {
+            draw();
+        });
 
-    var nodes = new vis.DataSet(txt);*/
-    /*var array = [
-      {id: 1, value: 35, label: "dog"},
-      {id: 2, value: 12, label: "cat"},
-      {id: 3, value: 333, label: "pet"},
-      {id: 4, value: 67, label: "giraffe"},
-      {id: 5, value: 55, label: "starfish"}
-    ];
+        //var js_thing = JSON.parse(jsonthing);
+        //var nodes = new vis.DataSet(eval(freqmap));
+        /*var valList = [];
+        for (var i = 0; i < js_thing.mapping.length; i++) {
+          valList.push(js_thing.mapping[i]);
+        }*/
+        //var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
+        /*var txt = [{id: 1, value: 35, label: "dog"},
+        {id: 2, value: 12, label: "cat"},
+        {id: 3, value: 333, label: "pet"},
+        {id: 4, value: 67, label: "giraffe"},
+        {id: 5, value: 55, label: "starfish"}];
+        //var arr = JSON.parse(txt);
 
-    var nodes = new vis.DataSet(array);*/
+        var nodes = new vis.DataSet(txt);*/
+        /*var array = [
+          {id: 1, value: 35, label: "dog"},
+          {id: 2, value: 12, label: "cat"},
+          {id: 3, value: 333, label: "pet"},
+          {id: 4, value: 67, label: "giraffe"},
+          {id: 5, value: 55, label: "starfish"}
+        ];
 
-    //var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
-    //var edges = new vis.DataSet(eval(adjmat));
+        var nodes = new vis.DataSet(array);*/
 
-    // create a network
-    /*var container = document.getElementById('mynetwork');
-    var data = {
-      nodes: nodes,
-      edges: edges
-    };
-    var options = {};
-    var network = new vis.Network(container, data, options);*/
+        //var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
+        //var edges = new vis.DataSet(eval(adjmat));
 
     /* this function is not used
     function nodes(relev) {

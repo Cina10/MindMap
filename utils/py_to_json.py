@@ -32,12 +32,8 @@ def edges(sim_mat):
 			edges.append(dic)
 	return edges 
 
-def generate_json_pair(kw_w_pairs, sim_mat, nodes_file_path, edges_file_path):
-	nodes_list = nodes(kw_w_pairs)
-	edges_list = edges(sim_mat)
+def generate_json_pair(kw_w_pairs, sim_mat):
+	nodes_list = json.dumps(nodes(kw_w_pairs))
+	edges_list = json.dumps(edges(sim_mat))
 
-	with open(nodes_file_path, 'w') as f: 
-		json.dump(nodes_list, f)
-	
-	with open(edges_file_path, 'w') as f: 
-		json.dump(edges_list, f)
+	return (nodes_list, edges_list)

@@ -63,33 +63,62 @@
 </textarea>
     </div>
     <script type="text/javascript">
-      var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
-      var adj_matrix = [[1,1,1],[1,1,1]];
-      var nodes = new vis.DataSet(nodes(json_data));
-      var edges = new vis.DataSet([
-        {from: 1, to: 3},
-        {from: 1, to: 2},
-        {from: 2, to: 4},
-        {from: 2, to: 5},
-        {from: 3, to: 3}
-      ]);
-      // create a network
-      var container = document.getElementById('mynetwork');
-      var data = {
-        nodes: nodes,
-        edges: edges
-      };
-      var options = {};
-      var network = new vis.Network(container, data, options);
-      function nodes(relev) {
-        var result = [];
-        var count = 1;
-        for (var i in relev) {
-          result.push({id: count, value: relev[i], label: i});
-          count++;
-        }
-        return result;
+
+    //var js_thing = JSON.parse(stuff);
+
+    //var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
+    var txt = [{id: 1, value: 35, label: "dog"},
+    {id: 2, value: 12, label: "cat"},
+    {id: 3, value: 333, label: "pet"},
+    {id: 4, value: 67, label: "giraffe"},
+    {id: 5, value: 55, label: "starfish"}];
+    //var arr = JSON.parse(txt);
+
+
+    var nodes = new vis.DataSet(txt);
+
+
+    /*var array = [
+      {id: 1, value: 35, label: "dog"},
+      {id: 2, value: 12, label: "cat"},
+      {id: 3, value: 333, label: "pet"},
+      {id: 4, value: 67, label: "giraffe"},
+      {id: 5, value: 55, label: "starfish"}
+    ];
+
+    var nodes = new vis.DataSet(array);*/
+
+    var edges = new vis.DataSet([
+      {from: 1, to: 3, value: 1},
+      {from: 1, to: 2, value: 8},
+      {from: 2, to: 4, value: 4},
+      {from: 2, to: 5, value: 2},
+      {from: 3, to: 3, value: 2}
+    ]);
+
+    // create a network
+    var container = document.getElementById('mynetwork');
+    var data = {
+      nodes: nodes,
+      edges: edges
+    };
+    var options = {};
+    var network = new vis.Network(container, data, options);
+
+
+
+    function nodes(relev) {
+      var result = [];
+      var count = 1;
+      for (var i in relev) {
+        result.push({id: count, value: relev[i], label: i});
+        count++;
       }
+      return result;
+    }
+
+
+
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

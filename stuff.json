@@ -1,0 +1,5 @@
+[{id: 1, value: 35, label: "dog"},
+{id: 2, value: 12, label: "cat"},
+{id: 3, value: 333, label: "pet"},
+{id: 4, value: 67, label: "giraffe"},
+{id: 5, value: 55, label: "starfish"}]

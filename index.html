@@ -30,6 +30,7 @@
       }
       body {
         text-align: center;
+        background-color: whitesmoke;
       }
       form {
         display: inline-block;
@@ -60,24 +61,74 @@
       </form>
       <br>
       <textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Paste text here." required="required">
-</textarea>
+      </textarea>
     </div>
+
+
     <script type="text/javascript">
 
-    //var js_thing = JSON.parse(stuff);
+    var nodes = null;
+    var edges = null;
+    var network = null;
 
+    var freqmap = '[{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 33, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 55, label: "starfish"}]';
+    var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
+
+    function draw() {
+      // create concepts
+      // value corresponds with importance of concepts
+      nodes = eval(freqmap);
+
+      // create connections between concepts
+      // value corresponds with the relevance between people
+      edges = eval(adjmat);
+
+      // Instantiate our network object.
+      var container = document.getElementById("mynetwork");
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      var options = {
+        nodes: {
+          shape: "dot",
+          scaling: {
+            customScalingFunction: function(min, max, total, value) {
+              return value / total;
+            },
+            min: 5,
+            max: 150
+          }
+        },
+        interaction: {hover: true}
+      };
+      network = new vis.Network(container, data, options);
+    }
+
+    window.addEventListener("load", () => {
+      draw();
+    });
+
+
+  });
+
+
+
+    //var js_thing = JSON.parse(jsonthing);
+    //var nodes = new vis.DataSet(eval(freqmap));
+    /*var valList = [];
+    for (var i = 0; i < js_thing.mapping.length; i++) {
+      valList.push(js_thing.mapping[i]);
+    }*/
     //var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
-    var txt = [{id: 1, value: 35, label: "dog"},
+    /*var txt = [{id: 1, value: 35, label: "dog"},
     {id: 2, value: 12, label: "cat"},
     {id: 3, value: 333, label: "pet"},
     {id: 4, value: 67, label: "giraffe"},
     {id: 5, value: 55, label: "starfish"}];
     //var arr = JSON.parse(txt);
 
-
-    var nodes = new vis.DataSet(txt);
-
-
+    var nodes = new vis.DataSet(txt);*/
     /*var array = [
       {id: 1, value: 35, label: "dog"},
       {id: 2, value: 12, label: "cat"},
@@ -88,22 +139,17 @@
 
     var nodes = new vis.DataSet(array);*/
 
-    var edges = new vis.DataSet([
-      {from: 1, to: 3, value: 1},
-      {from: 1, to: 2, value: 8},
-      {from: 2, to: 4, value: 4},
-      {from: 2, to: 5, value: 2},
-      {from: 3, to: 3, value: 2}
-    ]);
+    //var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
+    //var edges = new vis.DataSet(eval(adjmat));
 
     // create a network
-    var container = document.getElementById('mynetwork');
+    /*var container = document.getElementById('mynetwork');
     var data = {
       nodes: nodes,
       edges: edges
     };
     var options = {};
-    var network = new vis.Network(container, data, options);
+    var network = new vis.Network(container, data, options);*/
 
 
 

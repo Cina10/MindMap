@@ -3,7 +3,10 @@
 ## Mindmap: To Transcribe, Summarize and Visualize
 ## Authors: floor people, chair people, bed people
 
-# Dependencies: youtube-dl, sox, python3, google-cloud-sdk(gsutil, gcloud, etc.)
+# Dependencies: youtube-dl, sox, python3, google-cloud-sdk(gsutil, gcloud, etc.), spacy, nltk
+
+# Google Application Credentials
+export GOOGLE_APPLICATION_CREDENTIALS="./confidential/MindMap-c4dd617c1818.json"
 
 # Specify binary paths
 YOUTUBE_DL_PATH=/usr/bin/youtube-dl

@@ -86,9 +86,11 @@
   </head>
 
   <body>
+
     <div class="header">
       <h1>Mind Map</h1>
     </div>
+
 
     <!-- nav
     <nav class="navbar-inverse">
@@ -168,17 +170,17 @@
 
     //these two variables should later be replaced by variable input
     //(or something like that; I don't know proper terminology)
-    var freqmap = '[{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 17, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 16, label: "starfish"}]';
-    var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
+    var freqmap = [{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 17, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 16, label: "starfish"}];
+    var adjmat = [{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}];
 
     function draw() {
       // create concepts
       // value corresponds with importance of concepts
-      nodes = eval(freqmap);
+      nodes = freqmap;
 
       // create connections between concepts
       // value corresponds with the relevance between people
-      edges = eval(adjmat);
+      edges = adjmat;
 
       // Instantiate our network object.
       var container = document.getElementById("mynetwork");

@@ -12,12 +12,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
       #mynetwork{
-        width: 600px;
-        height: 400px;
-        border: 1px solid lightgray;
-        margin-left: auto;
-        margin-right: auto;
+        width: 90%;
+        height: 460px;
+        margin: none;
+        float: center;
       }
       .navbar-header {
         float: left;
@@ -27,15 +29,50 @@
       }
       .navbar-brand {
         float:none;
+        font-size: 3em;
       }
       body {
-        text-align: center;
+        text-indent: 2%;
       }
-      form {
-        display: inline-block;
+      textarea{
+        border: 0px;
+        text-indent: 2%;
+        margin-left: 2em;
+        width: 90%;
       }
+
+      }
+      h5{
+        font-size:1.2em;
+        color: white;
+      }
+      .gridder{
+        display: grid;
+        grid-template-columns: 75% 25%;
+        grid-gap: 2px;
+        padding: 10px;
+
+      }
+      .box1{
+        background:lightskyblue;
+      }
+      .box2{
+        background:lightsteelblue;
+
+      }
+      .box3{
+        background:lightblue;
+        grid-row: 1/3;
+        padding: auto;
+      }
+
+      nav {
+        padding: 0.5%;
+      }
+
     </style>
   </head>
+
   <body>
     <!-- nav -->
     <nav class="navbar-inverse">
@@ -46,38 +83,97 @@
       </div>
     </nav>
     <div id="mynetwork" height="500px"></div>
-    <div class="row">
-      <form action="#">
-        Keyword: <input type="text" name="keyword" required="required">
-        <br>
-        Upload an audio file: <input type="file" name="speech" accept="audio/*" required="required">
-        <input type="submit">
-      </form>
-      <p>OR</p>
-      <form action="#" id="usrform">
-        Keyword: <input type="text" name="keyword" required="required">
-        <input type="submit">
-      </form>
-      <br>
-      <textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Paste text here." required="required">
-</textarea>
+    <div class="gridder">
+      <div class="box1">
+        <form action="#">
+          <h5>Keyword</h5>
+          <input type="text" name="keyword" required="required" placeholder="Enter keyword" style="border:0px; margin-left: 2em;">
+          <br><br>
+          <h5>Video source</h5>
+          <input type="text" name="speech" required="required" placeholder="Enter URL" style="border:0px; margin-left: 2em;">
+          <br><br>
+          <input type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
+        </form>
+
+      </div>
+      <div class="box3">
+          <form action="#" id="usrform">
+            <h5>Enter transcript</h5>
+            <br>
+            <textarea rows="10" cols="50" name="comment" form="usrform" placeholder="Paste text here" required="required"></textarea>
+            <br><br>
+            <input type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
+          </form>
+          <br>
+      </div>
+
+      </div>
     </div>
+
     <script type="text/javascript">
 
-    //var js_thing = JSON.parse(stuff);
+    var nodes = null;
+    var edges = null;
+    var network = null;
 
+    var freqmap = '[{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 33, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 55, label: "starfish"}]';
+    var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
+
+    function draw() {
+      // create concepts
+      // value corresponds with importance of concepts
+      nodes = eval(freqmap);
+
+      // create connections between concepts
+      // value corresponds with the relevance between people
+      edges = eval(adjmat);
+
+      // Instantiate our network object.
+      var container = document.getElementById("mynetwork");
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      var options = {
+        nodes: {
+          shape: "dot",
+          scaling: {
+            customScalingFunction: function(min, max, total, value) {
+              return value / total;
+            },
+            min: 5,
+            max: 150
+          }
+        },
+        interaction: {hover: true}
+      };
+      network = new vis.Network(container, data, options);
+    }
+
+    window.addEventListener("load", () => {
+      draw();
+    });
+
+
+
+
+
+
+    //var js_thing = JSON.parse(jsonthing);
+    //var nodes = new vis.DataSet(eval(freqmap));
+    /*var valList = [];
+    for (var i = 0; i < js_thing.mapping.length; i++) {
+      valList.push(js_thing.mapping[i]);
+    }*/
     //var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
-    var txt = [{id: 1, value: 35, label: "dog"},
+    /*var txt = [{id: 1, value: 35, label: "dog"},
     {id: 2, value: 12, label: "cat"},
     {id: 3, value: 333, label: "pet"},
     {id: 4, value: 67, label: "giraffe"},
     {id: 5, value: 55, label: "starfish"}];
     //var arr = JSON.parse(txt);
 
-
-    var nodes = new vis.DataSet(txt);
-
-
+    var nodes = new vis.DataSet(txt);*/
     /*var array = [
       {id: 1, value: 35, label: "dog"},
       {id: 2, value: 12, label: "cat"},
@@ -88,22 +184,17 @@
 
     var nodes = new vis.DataSet(array);*/
 
-    var edges = new vis.DataSet([
-      {from: 1, to: 3, value: 1},
-      {from: 1, to: 2, value: 8},
-      {from: 2, to: 4, value: 4},
-      {from: 2, to: 5, value: 2},
-      {from: 3, to: 3, value: 2}
-    ]);
+    //var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
+    //var edges = new vis.DataSet(eval(adjmat));
 
     // create a network
-    var container = document.getElementById('mynetwork');
+    /*var container = document.getElementById('mynetwork');
     var data = {
       nodes: nodes,
       edges: edges
     };
     var options = {};
-    var network = new vis.Network(container, data, options);
+    var network = new vis.Network(container, data, options);*/
 
 
 
@@ -114,14 +205,14 @@
         result.push({id: count, value: relev[i], label: i});
         count++;
       }
-      return result;
     }
 
 
 
-    </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-</html>
+
+      </script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+  </html>

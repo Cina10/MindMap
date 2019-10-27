@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- This file contains a nice-looking example of what things should look like if it worked completely -->
 
 <head>
     <title>MindMap</title>
@@ -168,105 +169,99 @@
     </script>
 -->
 
-    <script type="text/javascript">
-
-        var nodes = null;
-        var edges = null;
-        var network = null;
-
-    //these two variables should later be replaced by variable input
-    //(or something like that; I don't know proper terminology)
-      var freqmap = [{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 17, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 16, label: "starfish"}];
-      var adjmat = [{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}];
-    //    var freqmap = MINDMAP_FREQMAP_MATCH
-    //    var adjmat = MINDMAP_ADJMAT_MATCH
-
-    function draw() {
-      // create concepts
-      // value corresponds with importance of concepts
-      nodes = freqmap;
-      // create connections between concepts
-      // value corresponds with the relevance between people
-      edges = adjmat;
-
-      // Instantiate our network object.
-      var container = document.getElementById("mynetwork");
-      var data = {
-        nodes: nodes,
-        edges: edges
-      };
-      var options = {
-        nodes: {
-          shape: "dot",
-          color: {
-            background: "#92E5FF",
-            hover: "#4FD5FF",
-            highlight : {
-              background: "#FFF9AF",
-              border: "#FFF255"
-            }
-          },
-          //font.color: "#000000",
-          font: {
-            color: "#D0D0D0",
-          },
-          scaling: {
-            customScalingFunction: function(min, max, total, value) {
-              return value / total;
-            },
-            min: 5,
-            max: 150
-          }
-        },
-        interaction: {hover: true}
-      };
-      network = new vis.Network(container, data, options);
-      window.addEventListener("load", () => {
-        draw();
-      });
-    }
-
-
-
-        //var js_thing = JSON.parse(jsonthing);
-        //var nodes = new vis.DataSet(eval(freqmap));
-        /*var valList = [];
-        for (var i = 0; i < js_thing.mapping.length; i++) {
-          valList.push(js_thing.mapping[i]);
-        }*/
-        //var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
-        /*var txt = [{id: 1, value: 35, label: "dog"},
-        {id: 2, value: 12, label: "cat"},
-        {id: 3, value: 333, label: "pet"},
-        {id: 4, value: 67, label: "giraffe"},
-        {id: 5, value: 55, label: "starfish"}];
-        //var arr = JSON.parse(txt);
-
-        var nodes = new vis.DataSet(txt);*/
-        /*var array = [
-          {id: 1, value: 35, label: "dog"},
-          {id: 2, value: 12, label: "cat"},
-          {id: 3, value: 333, label: "pet"},
-          {id: 4, value: 67, label: "giraffe"},
-          {id: 5, value: 55, label: "starfish"}
-        ];
-
-        var nodes = new vis.DataSet(array);*/
-
-        //var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
-        //var edges = new vis.DataSet(eval(adjmat));
-
-    /* this function is not used
-    function nodes(relev) {
-      var result = [];
-      var count = 1;
-      for (var i in relev) {
-        result.push({id: count, value: relev[i], label: i});
-        count++;
-      }
-    }*/
-
-      </script>
+<script type="text/javascript">
+var nodes = null;
+var edges = null;
+var network = null;
+//these two variables should later be replaced by variable input
+//(or something like that; I don't know proper terminology)
+var freqmap = [{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 17, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 16, label: "starfish"}];
+var adjmat = [{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}];
+function draw() {
+ // create concepts
+ // value corresponds with importance of concepts
+ nodes = freqmap;
+ // create connections between concepts
+ // value corresponds with the relevance between people
+ edges = adjmat;
+ // Instantiate our network object.
+ var container = document.getElementById("mynetwork");
+ var data = {
+   nodes: nodes,
+   edges: edges
+ };
+ var options = {
+   nodes: {
+     shape: "dot",
+     color: {
+       background: "#92E5FF",
+       hover: "#4FD5FF",
+       highlight : {
+         background: "#FFF9AF",
+         border: "#FFF255"
+       }
+     },
+     //font.color: "#000000",
+     font: {
+       color: "#D0D0D0",
+     },
+     scaling: {
+       customScalingFunction: function(min, max, total, value) {
+         return value / total;
+       },
+       min: 5,
+       max: 150
+     }
+   },
+   interaction: {hover: true}
+ };
+ network = new vis.Network(container, data, options);
+}
+window.addEventListener("load", () => {
+ draw();
+});
+//var js_thing = JSON.parse(jsonthing);
+//var nodes = new vis.DataSet(eval(freqmap));
+/*var valList = [];
+for (var i = 0; i < js_thing.mapping.length; i++) {
+ valList.push(js_thing.mapping[i]);
+}*/
+//var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
+/*var txt = [{id: 1, value: 35, label: "dog"},
+{id: 2, value: 12, label: "cat"},
+{id: 3, value: 333, label: "pet"},
+{id: 4, value: 67, label: "giraffe"},
+{id: 5, value: 55, label: "starfish"}];
+//var arr = JSON.parse(txt);
+var nodes = new vis.DataSet(txt);*/
+/*var array = [
+ {id: 1, value: 35, label: "dog"},
+ {id: 2, value: 12, label: "cat"},
+ {id: 3, value: 333, label: "pet"},
+ {id: 4, value: 67, label: "giraffe"},
+ {id: 5, value: 55, label: "starfish"}
+];
+var nodes = new vis.DataSet(array);*/
+//var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
+//var edges = new vis.DataSet(eval(adjmat));
+// create a network
+/*var container = document.getElementById('mynetwork');
+var data = {
+ nodes: nodes,
+ edges: edges
+};
+var options = {};
+var network = new vis.Network(container, data, options);*/
+/* this function is not used
+function nodes(relev) {
+ var result = [];
+ var count = 1;
+ for (var i in relev) {
+   result.push({id: count, value: relev[i], label: i});
+   count++;
+ }
+}*/
+ </script>
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

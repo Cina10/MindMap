@@ -12,6 +12,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
+<style type="text/css">
+  #mynetwork {
+    width: 600px;
+    height: 400px;
+    border: 1px solid lightgray;
+  }
+</style>
+
+</head>
+
+<body>
 <!-- nav -->
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -39,27 +50,46 @@
   <input type="submit">
 </form>
 <br>
-<textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Paste text here." required="required">
+<textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Enter/paste text here." required="required">
 </textarea>
 
 
-<div id="mynetwork" height="500px"></div>
+<div id="mynetwork" height="100%"></div>
 
 
 
 <script type="text/javascript">
 
-var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
-var adj_matrix = [[1,1,1],[1,1,1]];
+//var js_thing = JSON.parse(stuff);
 
-var nodes = new vis.DataSet(nodes(json_data));
+//var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
+var txt = [{id: 1, value: 35, label: "dog"},
+{id: 2, value: 12, label: "cat"},
+{id: 3, value: 333, label: "pet"},
+{id: 4, value: 67, label: "giraffe"},
+{id: 5, value: 55, label: "starfish"}];
+//var arr = JSON.parse(txt);
+
+
+var nodes = new vis.DataSet(txt);
+
+
+/*var array = [
+  {id: 1, value: 35, label: "dog"},
+  {id: 2, value: 12, label: "cat"},
+  {id: 3, value: 333, label: "pet"},
+  {id: 4, value: 67, label: "giraffe"},
+  {id: 5, value: 55, label: "starfish"}
+];
+
+var nodes = new vis.DataSet(array);*/
 
 var edges = new vis.DataSet([
-  {from: 1, to: 3},
-  {from: 1, to: 2},
-  {from: 2, to: 4},
-  {from: 2, to: 5},
-  {from: 3, to: 3}
+  {from: 1, to: 3, value: 1},
+  {from: 1, to: 2, value: 8},
+  {from: 2, to: 4, value: 4},
+  {from: 2, to: 5, value: 2},
+  {from: 3, to: 3, value: 2}
 ]);
 
 // create a network
@@ -71,6 +101,8 @@ var data = {
 var options = {};
 var network = new vis.Network(container, data, options);
 
+
+
 function nodes(relev) {
   var result = [];
   var count = 1;
@@ -79,17 +111,6 @@ function nodes(relev) {
     count++;
   }
   return result;
-/*  var working = JSON.parse(relev);
-  var ret = [];
-  var count = 0;
-  for (k in working) {
-    if (working.hasOwnProperty(k)) {
-
-      count++;
-
-    }
-  }
-  return working;*/
 }
 
 

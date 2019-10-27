@@ -40,8 +40,6 @@
         margin-left: 2em;
         width: 90%;
       }
-
-      }
       h5{
         font-size:1.2em;
         color: white;
@@ -82,8 +80,13 @@
         </div>
       </div>
     </nav>
+
+    <!-- network graphic -->
     <div id="mynetwork" height="500px"></div>
+
+    <!-- input forms -->
     <div class="gridder">
+      <!-- form 1 -->
       <div class="box1">
         <form action="#">
           <h5>Keyword</h5>
@@ -92,23 +95,31 @@
           <h5>Video source</h5>
           <input type="text" name="speech" required="required" placeholder="Enter URL" style="border:0px; margin-left: 2em;">
           <br><br>
-          <input type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
+          <input onclick="showTranscript()" type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
         </form>
-
       </div>
+
+      <!-- form 2 -->
       <div class="box3">
           <form action="#" id="usrform">
             <h5>Enter transcript</h5>
             <br>
-            <textarea rows="10" cols="50" name="comment" form="usrform" placeholder="Paste text here" required="required"></textarea>
+            <textarea id="transcription" rows="10" cols="50" name="comment" form="usrform" placeholder="Paste text here" required="required"></textarea>
             <br><br>
             <input type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
           </form>
           <br>
       </div>
 
-      </div>
     </div>
+
+    <script>
+    function showTranscript() {
+      document.getElementById("transcription").innerHTML = "This should be a transcription of the video. Thanks.";
+    }
+
+
+    </script>
 
     <script type="text/javascript">
 
@@ -156,9 +167,6 @@
 
 
 
-
-
-
     //var js_thing = JSON.parse(jsonthing);
     //var nodes = new vis.DataSet(eval(freqmap));
     /*var valList = [];
@@ -197,7 +205,7 @@
     var network = new vis.Network(container, data, options);*/
 
 
-
+    //this function is not used
     function nodes(relev) {
       var result = [];
       var count = 1;

@@ -17,6 +17,9 @@ MINDMAP_PATH=./mindmap.py
 
 # Specify video and audio URI/path, create temp directory
 VIDEO_URL=$1
+TITLE=$2
+NUM_KEYWORDS=$3
+SEARCHWORD=$4
 TMP_DIR_PATH=$(mktemp -d -t mindmap-video-XXXXXXXXXX)
 DOWNLOADED_AUDIO_PATH="${TMP_DIR_PATH}/downloaded-audio"
 CONVERTED_AUDIO_PATH="${TMP_DIR_PATH}/converted-audio.flac"
@@ -32,4 +35,4 @@ ${SOX_PATH} "${DOWNLOADED_AUDIO_PATH}.wav" --rate 16k --bits 16 --channels 1 ${C
 ${GSUTIL_PATH} cp ${CONVERTED_AUDIO_PATH} "${AUDIO_GS_URI}"
 
 # Call Mindmap
-${PYTHON3_PATH} ${MINDMAP_PATH} "${AUDIO_GS_URI}"
+${PYTHON3_PATH} ${MINDMAP_PATH} "${AUDIO_GS_URI}" "${TITLE}" "${NUM_KEYWORDS}" "${SEARCHWORD}"

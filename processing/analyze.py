@@ -30,3 +30,15 @@ def similarity(kw_w_pairs):
             adj_mat[i, j] = doc_i.similarity(doc_j)
     
     return adj_mat
+
+# Find the closest term in kw_w_pairs to searchword:
+def closest_match(kw_w_pairs, searchword):
+    nlp = spacy.load("en_core_web_lg")
+    keywords = [p[0] for p in kw_w_pairs]
+    doc_sw = nlp(searchword)
+    match = []
+    for i in range(len(keywords)):
+        doc_kw = nlp(keywords[i])
+        match.append(doc_sw.similarity(doc_kw))
+    max_pos = match.index(max(match))
+    return (keywords[max_pos], max(match))

@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>MindMap</title>
     <script type="text/javascript" src="https://unpkg.com/vis-network@latest/dist/vis-network.min.js"></script>
     <link href="https://unpkg.com/vis-network@latest/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
     <link href="style.css" rel="stylesheet" type="text/css">
-    <link href="style1.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--bootstrap-->
@@ -15,7 +13,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <style type="text/css">
       * {
-
+        background-color: black;
       }
       #mynetwork {
         width: 73%;
@@ -23,18 +21,17 @@
         margin: 0;
         padding: 0;
         float: right;
-        background-color: transparent;
       }
       #userinputinfo {
         width: 27%;
-        height: 100vh;
+        height: 42em;
         text-indent: 5%;
         padding: 0;
         float: left;
         background-color: #303030;
       }
       h1 {
-        color: #505050;
+        color: #BFBFBF;
         font-size: 4em;
         margin: 0;
       }
@@ -86,25 +83,20 @@
       }
       */
     </style>
-</head>
+  </head>
 
   <body>
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-    <div id='stars'></div>
-    <div id='stars2'></div>
-    <div id='stars3'></div>
     <div class="header">
-      <h1>MindMap</h1>
+      <h1>Mind Map</h1>
     </div>
-
 
     <!-- nav
     <nav class="navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header navbar-center">
-                <a class="navbar-brand" href="#">Mind Map</a>
-            </div>
+      <div class="container-fluid">
+        <div class="navbar-header navbar-center">
+          <a class="navbar-brand" href="#">Mind Map</a>
         </div>
+      </div>
     </nav>
     -->
 
@@ -115,15 +107,15 @@
     <div id="userinputinfo">
       <!-- Need actual words to fill this part -->
       <br>
-      <h2>Search word: MINDMAP_SEARCH_WORD_MATCH</h2>
+      <h2>Search word: </h2>
       <br>
       <br>
-      <h2>Most relevant: MINDMAP_MOST_RELEVANT_MATCH</h2>
+      <h2>Most relevant: </h2>
       <br>
       <br>
-      <h2>Transcription:</h2>
-      <!-- Transcription in p tags -->
-      <p>MINDMAP_TRANSCRIPTION_MATCH</p>
+      <h2>Summary:</h2>
+      <!-- Summary in p tags -->
+      <p>This is not the actual summary.</p>
     </div>
 
 
@@ -145,7 +137,6 @@
           <input onclick="showTranscript()" type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
         </form>
       </div>
-
       <div class="box3">
           <form action="#" id="usrform">
             <h5 class="ind">Enter transcript</h5>
@@ -169,27 +160,32 @@
 -->
 
     <script type="text/javascript">
-        var nodes = null;
-        var edges = null;
-        var network = null;
-
+    var nodes = null;
+    var edges = null;
+    var network = null;
     //these two variables should later be replaced by variable input
     //(or something like that; I don't know proper terminology)
-    //  var freqmap = [{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 17, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 16, label: "starfish"}];
-    //  var adjmat = [{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}];
-        var freqmap = MINDMAP_FREQMAP_MATCH;
-        var adjmat = MINDMAP_ADJMAT_MATCH;
-
-    function draw() {
+    var nodes = [{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 17, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 16, label: "starfish"}];
+    var edges = [{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}];
+    function draw(search_word) {
       // create concepts
       // value corresponds with importance of concepts
-      nodes = freqmap;
-
       // create connections between concepts
       // value corresponds with the relevance between people
-      edges = adjmat;
-
       // Instantiate our network object.
+      
+      var node = get_node_by_keyword(search_word, nodes); 
+      console.log('node', node)
+      //var node_index = nodes.indexOf(node); 
+      //delete nodes[node_index]; 
+
+      // update the node with the new location and add to our data 
+      var updated_node = update_node_loc(node, search_word); //
+      console.log('updated', updated_node)
+      // node with an updated location
+      //nodes.push(updated_node);       
+      console.log('nodes', nodes)
+
       var container = document.getElementById("mynetwork");
       var data = {
         nodes: nodes,
@@ -199,12 +195,8 @@
         nodes: {
           shape: "dot",
           color: {
-            background: "#92E5FF",
-            hover: "#4FD5FF",
-            highlight : {
-              background: "#FFF9AF",
-              border: "#FFF255"
-            }
+            background: "#88C7FF",
+            hover: "#B1DAFF"
           },
           //font.color: "#000000",
           font: {
@@ -222,41 +214,87 @@
       };
       network = new vis.Network(container, data, options);
     }
-      window.addEventListener("load", () => {
-        draw();
-      });
-    
+    // PLACEHOLDER 
+    var search_word = "starfish"; 
+    window.addEventListener("load", () => {
+      draw(search_word);
+    });
 
 
+    function get_node_by_keyword(search_word, nodes){
 
-        //var js_thing = JSON.parse(jsonthing);
-        //var nodes = new vis.DataSet(eval(freqmap));
-        /*var valList = [];
-        for (var i = 0; i < js_thing.mapping.length; i++) {
-          valList.push(js_thing.mapping[i]);
-        }*/
-        //var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
-        /*var txt = [{id: 1, value: 35, label: "dog"},
-        {id: 2, value: 12, label: "cat"},
-        {id: 3, value: 333, label: "pet"},
-        {id: 4, value: 67, label: "giraffe"},
-        {id: 5, value: 55, label: "starfish"}];
-        //var arr = JSON.parse(txt);
+      answer = null 
+      for(var index = 0; index < nodes.length; index++) { 
+        node = nodes[index]
+        if(node.label == search_word){ // if the label of the node is the keyword we're looking for
+          answer = node; 
+        }
+      }
+      if(answer != null){
+        return answer 
+      }
+    }
 
-        var nodes = new vis.DataSet(txt);*/
-        /*var array = [
-          {id: 1, value: 35, label: "dog"},
-          {id: 2, value: 12, label: "cat"},
-          {id: 3, value: 333, label: "pet"},
-          {id: 4, value: 67, label: "giraffe"},
-          {id: 5, value: 55, label: "starfish"}
-        ];
 
-        var nodes = new vis.DataSet(array);*/
+    // update the location of the node to the center 
+    function update_node_loc(node, search_word){
+      var mynetwork = document.getElementById('mynetwork'); 
+      window.onresize = function() {mynetwork.fit();}
+      var domRECT = mynetwork.getBoundingClientRect(); 
+      console.log('domRECT', domRECT)
+      // replace the location of the node with the location of the center
+      var center_y = (domRECT.right - domRECT.left)/2
+      var center_x = (domRECT.bottom - domRECT.top)/2
+      node['x'] = center_y;
+      node['y'] = center_x;
+      node['fixed'] = {x: true,y: true}; 
+      var node_ID = node.id
+      node['color'] = {
+      border: '#ff0000',
+      background: '#ff0000',
+      highlight: {
+        border: '#ff0000',
+        background: '#ff0000'
+      }
 
-        //var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
-        //var edges = new vis.DataSet(eval(adjmat));
+    }
+      node['physics'] = false; 
+      return node; 
+    } 
 
+
+    //var js_thing = JSON.parse(jsonthing);
+    //var nodes = new vis.DataSet(eval(freqmap));
+    /*var valList = [];
+    for (var i = 0; i < js_thing.mapping.length; i++) {
+      valList.push(js_thing.mapping[i]);
+    }*/
+    //var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
+    /*var txt = [{id: 1, value: 35, label: "dog"},
+    {id: 2, value: 12, label: "cat"},
+    {id: 3, value: 333, label: "pet"},
+    {id: 4, value: 67, label: "giraffe"},
+    {id: 5, value: 55, label: "starfish"}];
+    //var arr = JSON.parse(txt);
+    var nodes = new vis.DataSet(txt);*/
+    /*var array = [
+      {id: 1, value: 35, label: "dog"},
+      {id: 2, value: 12, label: "cat"},
+      {id: 3, value: 333, label: "pet"},
+      {id: 4, value: 67, label: "giraffe"},
+      {id: 5, value: 55, label: "starfish"}
+    ];
+    var nodes = new vis.DataSet(array);*/
+    //var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
+    //var edges = new vis.DataSet(eval(adjmat));
+    // create a network
+    /*var container = document.getElementById('mynetwork');
+    var data = {
+      nodes: nodes,
+      edges: edges
+    };
+    var options = {};
+    var network = new vis.Network(container, data, options);*/
     /* this function is not used
     function nodes(relev) {
       var result = [];
@@ -266,7 +304,6 @@
         count++;
       }
     }*/
-
       </script>
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

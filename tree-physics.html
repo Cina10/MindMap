@@ -201,14 +201,17 @@
             };
             var options = {
                 nodes: {
-                    shape: "dot",
+                    shape: "box",
                     color: {
-                        background: "#92E5FF",
-                        hover: "#4FD5FF",
+                        background: "#303030",
+                        hover: "#555555",
                         highlight: {
-                            background: "#FFF9AF",
+                            background: "#222222",
                             border: "#FFF255"
                         }
+                    },
+                    shadow: {
+                        enabled:true
                     },
                     //font.color: "#000000",
                     font: {
@@ -220,6 +223,19 @@
                         },
                         min: 5,
                         max: 100
+                    },
+                    mass: 1.5
+                },
+                edges: {
+                    color: {
+                        //color:'#848484',
+                        highlight:'#848484',
+                        hover: '#d3d2cd',
+                        inherit: false,
+                        opacity:1.0
+                    },
+                    shadow: {
+                        enabled: true
                     }
                 },
                 interaction: {
@@ -231,53 +247,6 @@
         window.addEventListener("load", () => {
             draw();
         });
-
-        // PLACEHOLDER 
-        var search_word = "starfish";
-        window.addEventListener("load", () => {
-            draw(search_word);
-        });​​
-        function get_node_by_keyword(search_word, nodes) {​
-            answer = null
-            for (var index = 0; index < nodes.length; index++) {
-                node = nodes[index]
-                if (node.label == search_word) { // if the label of the node is the keyword we're looking for
-                    answer = node;
-                }
-            }
-            if (answer != null) {
-                return answer
-            }
-        }​​
-        // update the location of the node to the center 
-        function update_node_loc(node, search_word) {
-            var mynetwork = document.getElementById('mynetwork');
-            window.onresize = function() {
-                mynetwork.fit();
-            }
-            var domRECT = mynetwork.getBoundingClientRect();
-            console.log('domRECT', domRECT)
-                // replace the location of the node with the location of the center
-            var center_y = (domRECT.right - domRECT.left) / 2
-            var center_x = (domRECT.bottom - domRECT.top) / 2
-            node['x'] = center_y;
-            node['y'] = center_x;
-            node['fixed'] = {
-                x: true,
-                y: true
-            };
-            var node_ID = node.id
-            node['color'] = {
-                border: '#ff0000',
-                background: '#ff0000',
-                highlight: {
-                    border: '#ff0000',
-                    background: '#ff0000'
-                }​
-            }
-            node['physics'] = false;
-            return node;
-        }
 
         //var js_thing = JSON.parse(jsonthing);
         //var nodes = new vis.DataSet(eval(freqmap));

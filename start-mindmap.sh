@@ -2,7 +2,7 @@
 
 ## MindMap: To Transcribe, Visualize, and Inspire
 ## Authors: floor people, chair people, bed people
-VERSION=1.0rc1
+VERSION=1.0rc2
 
 # Dependencies: youtube-dl, sox, python3, google-cloud-sdk(gsutil, gcloud, etc.), spacy, nltk, textacy, numpy
 

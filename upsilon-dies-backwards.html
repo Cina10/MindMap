@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MindMap</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network@latest/dist/vis-network.min.js"></script>
+    <link href="https://unpkg.com/vis-network@latest/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="style1.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        * {}
+        
+        #mynetwork {
+            width: 65%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            float: right;
+            background-color: transparent;
+        }
+        
+        #userinputinfo {
+            width: 35%;
+            height: 100vh;
+            text-indent: 0%;
+            padding: 30px;
+            float: left;
+            background-color: #303030;
+            overflow-y: scroll;
+        }
+        
+        body {
+            background-color: #1f1f1f;
+        }
+        
+        h1 {
+            color: #909090;
+            font-size: 4em;
+            margin: 0;
+        }
+        
+        h2 {
+            color: #BFBFBF;
+            margin: 0;
+            font-size: 1.5em;
+            background-color: #303030;
+            padding-bottom: 0.2em;
+        }
+        
+        p {
+            color: #999999;
+            font-size: 1.2em;
+            background-color: #303030;
+        }
+        
+        .header {
+            text-align: center;
+            height: 6em;
+            padding-top: 1em;
+        }
+        /*
+		      textarea{
+		        border: 0px;
+		        margin-left: 2em;
+		        width: 90%;
+		      }
+		      h5{
+		        font-size:1.2em;
+		        color: white;
+		      }
+		      .ind {
+		        text-indent: 1%;
+		      }
+		      .gridder{
+		        display: grid;
+		        grid-template-columns: 75% 25%;
+		        grid-gap: 0.5%;
+		      }
+		      .box1{
+		        background:lightskyblue;
+		      }
+		      .box2{
+		        background:lightsteelblue;
+		      }
+		      .box3{
+		        background:lightblue;
+		        grid-row: 1/3;
+		        padding: auto;
+		      }
+		      */
+    </style>
+</head>
+
+<body>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <div class="header">
+        <h1>MindMap: upsilon-dies-backwards</h1>
+    </div>
+    <!-- nav
+    <nav class="navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header navbar-center">
+                <a class="navbar-brand" href="#">Mind Map</a>
+            </div>
+        </div>
+    </nav>
+    -->
+    <!-- network graphic -->
+    <div id="mynetwork" height="500px"></div>
+    <!-- additional information -->
+    <div id="userinputinfo">
+        <!-- Need actual words to fill this part -->
+        <br>
+        <h2>Search word: hope</h2>
+        <br>
+        <h2>Most relevant: say</h2>
+        <br>
+        <h2>Match quality: 67%</h2>
+        <br>
+        <h2>Transcription:</h2>
+        <!-- Transcription in p tags -->
+        <p>Horse walks into a bar and says why the long face process What bond and says oh it's a joke. I mean that will says you have had it before the long face is a genetic disposition finger I'm in foxholes and Bob and says okay it was just a joke and horses secondly frankly I'd rather be a horse than a glorified drink dispensing machine working in a dive like this. You degenerate little scrote Baumann says so you want a drink or Hostess. Yeah. Sorry it's been a difficult woman. Says I shouldn't have been so great. So why was your day difficult to explain I feel like I'm in someone else's imagination. You know like reality is too slippery bomb and says wow puppy that's deep. You know. I think. Chopin. How I said it best when he have a good walks into bar Pelican says everybody be cool this is a robbery and if you fucking pigs move. And I'll execute every Lotta Love awakes from a horrific dream a joke set in a bar with talking animals all over lips on the fifth floor of a modern apartment block he is of average height he dislikes asparagus Theodore's work of Andrei tarkovsky number 23 is Agatha. She is of average height. She just likes very specific on the list. She. It was the work of Isaac Asimov. Do not realize they live in the same apartment block they have met only once and it was a bit shit. It's transpired in this fashion Boulevard Newfoundland dog quote about Trends. He is old average heights he dislikes Pavlov's experiments it was the work of comrade like her one Saturday afternoon Oliver. Require nourishment for veterans the Newfoundland and by chance wanders into Agatha's Pet Shop Oliver. Apprehended. I guess I was reading a book called A Scanner Darkly a person favorites of his. I guess I pretended although it was clearly incapable of dressing himself and my car was. Also only have a pretending at being a real person upon the making. Eye contact spell heart rate supposed approach to severe tachycardia all of us elected some dog food at random and approaches the counter I got this at all of our replies they exchanged it amounts of currency transaction completed all of us that are the counts were moving too long waiting to say something clever and Charming horse walks into a bar all of a sudden I can't assess all of our replies. I can feel it all over walked home in the rain swearing to himself at medium volume the whole stream joke he thought what the hell is wrong with me. I guess I continue to reading but was unable to keep any of the woods in her head her brain was throwing a small shame party for her. It was neither the first nor the lost by coincidence many of Oliver and Agatha's molecules formed in the same star many millions of years in the future. The star exploded backwards in time you say. But this is beside the point as a results. Oliver and I guess there are two of just 34 humans in the world actually suited to pay a bond in a manner that would almost always be nice. I never fold into contempt of cosmic rays damage Stellar navigation inoperative crew or perished safe for me. I believe my body is currently trapped in a long sleep chamber unable to ask him catastrophic power failure I have retained communication with the maintenance computer he is severely damaged clearly insane. I have attempted to pacify him but he insist on keeping me in a semi-conscious waking state is showing signs of sentience and Mike Romania if I don't call him Zeus now. He grows very angry he has removed the bodies of the crew my Chambers and exhibited the limbs up and down the corridors he has been using the interface system to feed me his dreams sometimes he's a pharaoh and on a slave. Sometimes he's an eagle and on Prometheus is liver Zeus has some morbid obsession with the 21st century a love story about a pet shop owner of something we've got it together. Perhaps a thousand times now I found a new rollback tow into the cross subsystems to send this message. But I don't know how long until we see snow desist. I believe we're still on course for the nebula Athena now it is as we suspected radio bus from the nebula or. Two regular indicate intelligence over the years about Johnny Zeus has constructed some kind of theology around the nebula. He believes it's not intelligent but some kind of higher power to you or something insane Zeus takes excellent care of me physically he cuts my toenails and comes my hat Echoes me the fastest car I believe I'm being kept alive as an offering a diplomatic present when we arrive at the nebula but whatever is that I just pray in the meantime but all this shit they tell me up salon. You so unhealthy blah blah how I drink a little dark matter. Smoke a comment from time to time on the best body in the Milky Way even if it's just. Me never get invited to parties. Absalom likes being alone busted the dwarf stars will keep to themselves that blue giants Gather in the southern on the clock starzl to fucking strange and Charming for anyone anyway. Absolom Roche are you a party or right baby laughing when I go to sleep and maybe we should have pop by maybe we should have seen how old us alone is doing old and stupid up salon and no one comes to visit Boston. I hold too much I am full up with before I've seen the great blueprint I've watched c-beams glitter in the dark at the townhouse gate and for what on not long now Upsilon dies backwards today. And then they'll be sorry hope fireworks and fuck off old and stupid up Savant. They'll say if no one came to us as well as the fish this is a robbery West fish pond and says this is a vegan Baden you do your research Pelican says shut it out of Ira post says listen. I think this is a pretty irrelevant Pelican. Says shut it shut off Fox horses. Real Pelican says what post says we not real where were we before we came in here Pelican says fish my mouth but fish in my mouth.. He's. I can for you know about her mom and says. Yeah. I do Pelican says me too. But that doesn't prove anything.. Okay well how about this Pelican says hey stop it stop.. Hos says we're in a dream with no real and. Furthermore you little shit. Pelican says stop it at once you Dustin Lee ruffle cap bomb and says not weight if all this is true then someone's dreaming the dream and if they wake up or. They'd never dream us again doesn't that mean all three of us without any warning will just cease to exist we're going to find out if I got a fucking.. Today's continue wake work eat. Sleep dream wake think be is it possible of a 1 those that one can find the great Los Banos in another's face and know you meant to be together all of our house located Agatha by the pet discount Social Media Group page and nose Agatha is cool.. Agathe he will not go back to the pet shop because that would look desperate. I got that on the other hand remains at work during the days and watches the door in my peripheral vision each time the little Bell on the tool Rings she looks up only to find it is not Oliver shaped. She has looked up all the tiny pet discount client database and knows Oliver is cooled Oliver all about them the city people from using the worrying and passing by and ties and dresses and large hole by 4 vehicles the midterm cacophony of living and dying and paying taxes of Jesus is just me and a suits with a handkerchief in my top pocket he says the fatted calf muscles look it's best we are very close now will most of the outside edge Zeus in the nebula a chance and constantly by light posts at first I thought there must be some kind of intelligence is living in the nebula now. I think the nebula might be the intelligence I don't know how that's possible a few days ago. Was you supposed that it wasn't cosmic rays that caused the accident but Zeus himself he said he woke up sometime into a Johnny and developed a sudden compassion for other things that might have woken up accidentally in the University a spacecraft full of blood and entrails reaching out to kiss a cloud of Interstellar dust there's a romance to it if one doesn't look too closely then again we live only so it can suffer why put the reset button on one's Back Where I Come.. Just come remember what's me a note. Me. It was so long ago my mother and nebula and my father made of metal and electricity old and stupid Absalom and no one comes to visit before me the Empire's go up and down like sucks every society unique in its infancy and totally unoriginal and. Its death and even our Celestial things are no closer to the great. Yes the universe call some we will crowd around cupping already Shelton. What we didn't quite catch that speak up like some four legged animal entering a drinking establishment being is a terrible joke and we become Mysteries to ourselves at a pace so slow one doesn't notice One turns into something one doesn't recognize old like much Eva everyday is sharp edges even the easy things so hot out and. Pelican says okay. What do we know who's had a twin size pull. Says 9 definitely a man. Coda I think whatever that is.. Asha pay eyes or something Pelican says alright. Well how do we keep him asleep.. As well what if we go to sleep maybe we can make a dream inside a dream and stay that says oh I'm feeling to existential to sleep right now Mom and says slots it's worse than that look elegant. No offense. But you were deranged floppy. Is halfway decent. I'm super sensible it ego superego random characters wear integrative psychological aspects if you have a streaming us week on a Skype with two essential Pelican. Says then what do we do for says what everyone does we die. Pelican says that doesn't help. Both says no probably know how about this day and says oh fuck off and says it's getting light morning is almost here will be awake soon next drinks are on the house down. Payment Pelican says boys if this is it if we go against the dark. I'm sorry about the rubbery thing I just really love fish pole. Says it's all right. Just wish we could have gotten to know each other better, and says until we meet again in another hat on another Pearland goodnight Pelican goodnight horse and will the last one out please turn off the light and horse horses farm and says why the Long Fellow actually fuck this other things one Saturday he dresses semi-formal e and leave the house heart rate of 75000 beats per minute. Oliver enters. I get the Pet Shop. Hello again I all of it begins and stops it is not Agatha sat at the desk but. A portly middle-aged Implement. All of us says I got that doesn't work here anymore. Middle-aged gentleman says Olive I access the shelf and heads home. You idiot a little things you has an idiot young and stupid all of us. And no one comes to visit a heavy Stone begins and soaks him observing the same Storm from a hygienist questionable coffee shop is Agatha insouciance her manager called her Daydream lackluster on most indignant firing happiness. Is not achievable pedal by those too afraid to admit the world's to fold state is. Misery has his own apartment block an dentist Agatha drive home for the rain numb and parks on the grounds and takes the left out for the very same old apartment block being hers or so of course the lift stops at the ground floor the doors open the man incapable of dressing himself all of us that the woman with decent taste in science fiction says the left they stand in silence for quite some time but it reaches I got this floor quietly. I got that says what did the bombing say sorry all of us says what did the bombing say back to the horse why the long face all of a sudden and then just lots of shouting really do you maybe want to go to the fastest times. Yes I got that says now. Yes I got this has to lift those clothes the two of them still inside the ground floor button outside the city people returning home from work and fretting him passing by in suits and coats and small electrically powered vehicles the secret and coffee of birth and death and housing dates though on one street the reunification of the Hop of a long-dead stop still yet to explore many millions of years in the future the small islands of everything's okay. I meant the tumultuously of helium hydrogen sulfur oxygen and thoughts millions of them. We're inside the anomaly now almost at the center still accelerating. I can hear Jesus singing like a teenager off on the first day. I think the nebula is singing back no more 21st century simulations now is Zeus's give me a few system permissions the interface will fashion the fantasy I like the beach near my grandfather's house where the sun is warm and the water is clear and nothing ends came all this way just to go home back to the long summer holidays in the evenings when we all sets out on the beach and looked up with a nice guy and wanted to go that the stars or a canvas we would leave our ugliness is behind we exercise our demons weed kill the edge and Foster. The superego guess that's not quite how it turned out. But it's lovely in here where the sun is warm and the water is clear and nothing else where the sun is warm and the water is clear and nothing ends where the sun is warm and the water is clear where the sun is warm but I want to ask where what size room. And I've made the arrangements I'll be fireworks scene and maybe one day so oil for something better. I go to seek a great. Perhaps now I remember the road when it was new you the plastic wrapping still on Armon Warren chemistry just go up in his milk teeth. I remember when the light was faster. I'm a living. I want to stab myself. I remember love remember friends I remember me. I remember mum. I miss you Mom. I go to the places where you raised me and it never helps you always never that.. I tried the last million years just to hang out with you for one more hour or so busy being young. I forgot you weren't forever. And now you're gone forever. I'm always grouchy and cynical no fun. For anyone old now laying around the corona I know this left about these parts is old and stupid Absalom and no one comes to visit hold in old pal so let me on the pot the feast is over on the lamps expire bhakti rodich relax this one.. </p>
+    </div>
+    <!-- input forms -->
+    <!--
+    <div class="gridder">
+    -->
+    <!--
+      <div class="box1">
+        <form action="#">
+          <h5 class="ind">Keyword</h5>
+          <input class="ind" type="text" name="keyword" required="required" placeholder="Enter keyword" style="border:0px; margin-left: 2em;">
+          <br><br>
+          <h5 class="ind">Video source</h5>
+          <input class="ind" type="text" name="speech" required="required" placeholder="Enter URL" style="border:0px; margin-left: 2em;">
+          <br><br>
+          <input onclick="showTranscript()" type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
+        </form>
+      </div>
+
+      <div class="box3">
+          <form action="#" id="usrform">
+            <h5 class="ind">Enter transcript</h5>
+            <br>
+            <textarea class="ind" id="transcription" rows="10" cols="50" name="comment" form="usrform" placeholder="Paste text here" required="required"></textarea>
+            <br><br>
+            <input type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
+          </form>
+          <br>
+      </div>
+    --></div>
+    <!--
+    <script>
+    function showTranscript() {
+      document.getElementById("transcription").innerHTML = "This should be a transcription of the video. Thanks.";
+    }
+    </script>
+-->
+    <script type="text/javascript">
+        var nodes = null;
+        var edges = null;
+        var network = null;
+
+        //these two variables should later be replaced by variable input
+        //(or something like that; I don't know proper terminology)
+        //  var freqmap = [{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 17, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 16, label: "starfish"}];
+        //  var adjmat = [{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}];
+        var freqmap = [{"id": 0, "value": 0.08331333746163239, "label": "-PRON- death"}, {"id": 1, "value": 0.023764524971012772, "label": "a scanner darkly"}, {"id": 2, "value": 0.014201028751242507, "label": "say"}, {"id": 3, "value": 0.009673406684175757, "label": "long face process what bond"}, {"id": 4, "value": 0.008582934272418508, "label": "pearland goodnight pelican goodnight horse"}, {"id": 5, "value": 0.006553411991579581, "label": "long sleep chamber unable"}, {"id": 6, "value": 0.006266032327577106, "label": "pet shop oliver"}, {"id": 7, "value": 0.005811735266327112, "label": "old apartment block"}];
+        var adjmat = [{"from": 0, "to": 1, "value": 0.27688128119123223}, {"from": 0, "to": 2, "value": 0.4120151655000069}, {"from": 0, "to": 3, "value": 0.48521316863828307}, {"from": 0, "to": 4, "value": 0.17221027615107962}, {"from": 0, "to": 5, "value": 0.47900573422104026}, {"from": 0, "to": 6, "value": 0.2619890358983138}, {"from": 0, "to": 7, "value": 0.3293140081463091}, {"from": 1, "to": 2, "value": 0.3171671315265988}, {"from": 1, "to": 3, "value": 0.4679454384992757}, {"from": 1, "to": 4, "value": 0.19678654393052755}, {"from": 1, "to": 5, "value": 0.41858104424862824}, {"from": 1, "to": 6, "value": 0.2826555388293732}, {"from": 1, "to": 7, "value": 0.3555254521217381}, {"from": 2, "to": 3, "value": 0.6147518007294466}, {"from": 2, "to": 4, "value": 0.1854889160446026}, {"from": 2, "to": 5, "value": 0.49682239596240463}, {"from": 2, "to": 6, "value": 0.2832924662776427}, {"from": 2, "to": 7, "value": 0.37428680524961294}, {"from": 3, "to": 4, "value": 0.1842899410693826}, {"from": 3, "to": 5, "value": 0.6941646149191935}, {"from": 3, "to": 6, "value": 0.37397141421002067}, {"from": 3, "to": 7, "value": 0.4893151520639465}, {"from": 4, "to": 5, "value": 0.32045529716509435}, {"from": 4, "to": 6, "value": 0.43903091932950256}, {"from": 4, "to": 7, "value": 0.24495128389802964}, {"from": 5, "to": 6, "value": 0.39936755852472117}, {"from": 5, "to": 7, "value": 0.5155163529739493}, {"from": 6, "to": 7, "value": 0.4270550843941035}];
+
+        function draw() {
+            // create concepts
+            // value corresponds with importance of concepts
+            nodes = freqmap;
+
+            // create connections between concepts
+            // value corresponds with the relevance between people
+            edges = adjmat;
+
+            // Instantiate our network object.
+            var container = document.getElementById("mynetwork");
+            var data = {
+                nodes: nodes,
+                edges: edges
+            };
+            var options = {
+                nodes: {
+                    shape: "box",
+                    color: {
+                        background: "#303030",
+                        hover: "#555555",
+                        highlight: {
+                            background: "#222222",
+                            border: "#FFF255"
+                        }
+                    },
+                    shadow: {
+                        enabled: true
+                    },
+                    //font.color: "#000000",
+                    font: {
+                        color: "#D0D0D0",
+                    },
+                    scaling: {
+                        customScalingFunction: function(min, max, total, value) {
+                            return value / total;
+                        },
+                        min: 5,
+                        max: 100
+                    },
+                    mass: 1.5
+                },
+                edges: {
+                    color: {
+                        //color:'#848484',
+                        highlight: '#848484',
+                        hover: '#d3d2cd',
+                        inherit: false,
+                        opacity: 1.0
+                    },
+                    shadow: {
+                        enabled: true
+                    }
+                },
+                interaction: {
+                    hover: true
+                }
+            };
+            network = new vis.Network(container, data, options);
+        }
+        window.addEventListener("load", () => {
+            draw();
+        });
+
+        //var js_thing = JSON.parse(jsonthing);
+        //var nodes = new vis.DataSet(eval(freqmap));
+        /*var valList = [];
+        for (var i = 0; i < js_thing.mapping.length; i++) {
+          valList.push(js_thing.mapping[i]);
+        }*/
+        //var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
+        /*var txt = [{id: 1, value: 35, label: "dog"},
+        {id: 2, value: 12, label: "cat"},
+        {id: 3, value: 333, label: "pet"},
+        {id: 4, value: 67, label: "giraffe"},
+        {id: 5, value: 55, label: "starfish"}];
+        //var arr = JSON.parse(txt);
+
+        var nodes = new vis.DataSet(txt);*/
+        /*var array = [
+          {id: 1, value: 35, label: "dog"},
+          {id: 2, value: 12, label: "cat"},
+          {id: 3, value: 333, label: "pet"},
+          {id: 4, value: 67, label: "giraffe"},
+          {id: 5, value: 55, label: "starfish"}
+        ];
+
+        var nodes = new vis.DataSet(array);*/
+
+        //var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
+        //var edges = new vis.DataSet(eval(adjmat));
+
+        /* this function is not used
+        function nodes(relev) {
+          var result = [];
+          var count = 1;
+          for (var i in relev) {
+            result.push({id: count, value: relev[i], label: i});
+            count++;
+          }
+        }*/
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MindMap</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network@latest/dist/vis-network.min.js"></script>
+    <link href="https://unpkg.com/vis-network@latest/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="style1.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        * {}
+        
+        #mynetwork {
+            width: 65%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            float: right;
+            background-color: transparent;
+        }
+        
+        #userinputinfo {
+            width: 35%;
+            height: 100vh;
+            text-indent: 0%;
+            padding: 30px;
+            float: left;
+            background-color: #303030;
+        }
+        
+        body {
+            background-color: #1f1f1f;
+        }
+        
+        h1 {
+            color: #909090;
+            font-size: 4em;
+            margin: 0;
+        }
+        
+        h2 {
+            color: #BFBFBF;
+            margin: 0;
+            font-size: 1.5em;
+            background-color: #303030;
+            padding-bottom: 0.2em;
+        }
+        
+        p {
+            color: #999999;
+            font-size: 1.2em;
+            background-color: #303030;
+        }
+        
+        .header {
+            text-align: center;
+            height: 6em;
+            padding-top: 1em;
+        }
+        /*
+		      textarea{
+		        border: 0px;
+		        margin-left: 2em;
+		        width: 90%;
+		      }
+		      h5{
+		        font-size:1.2em;
+		        color: white;
+		      }
+		      .ind {
+		        text-indent: 1%;
+		      }
+		      .gridder{
+		        display: grid;
+		        grid-template-columns: 75% 25%;
+		        grid-gap: 0.5%;
+		      }
+		      .box1{
+		        background:lightskyblue;
+		      }
+		      .box2{
+		        background:lightsteelblue;
+		      }
+		      .box3{
+		        background:lightblue;
+		        grid-row: 1/3;
+		        padding: auto;
+		      }
+		      */
+    </style>
+</head>
+
+<body>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <div class="header">
+        <h1>MindMap: black-hole</h1>
+    </div>
+    <!-- nav
+    <nav class="navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header navbar-center">
+                <a class="navbar-brand" href="#">Mind Map</a>
+            </div>
+        </div>
+    </nav>
+    -->
+    <!-- network graphic -->
+    <div id="mynetwork" height="500px"></div>
+    <!-- additional information -->
+    <div id="userinputinfo">
+        <!-- Need actual words to fill this part -->
+        <br>
+        <h2>Search word: gravity</h2>
+        <br>
+        <br>
+        <h2>Most relevant: parallel light ray</h2>
+        <br>
+        <br>
+        <h2>Transcription:</h2>
+        <!-- Transcription in p tags -->
+        <p>On a Wednesday April 10th 2019 you will probably see the first ever image of a black hole that's when the Event Horizon telescope will be releasing their results and I haven't seen them yet. I think they're going to look something like this. And I can be relatively confident because well it's going to look a bit like a fuzzy coffee mug stain. But if you are disappointed by this image I think that misses the gravity of the situation from this image we should be able to tell whether the general theory of relativity accurately predicts what happens in the strong gravity regime that is what happens around a black hole what I want to do here is understand what exactly we are seeing in this image so here is my Moc black coal of Science and this sphere represents the Event Horizon that is the location from which not even light fired radially away from the black hole could be detected by an outside Observer all of the world lines end up in the center of the black hole in the singularity once you're inside here. There's no coming back. I'm not even at 4 light the radius of The Event Horizon is known as the schwarzschild radius if we were just to look at a black hole with nothing around it we would not be able to make an image like this because well it would just absorb all electromagnetic radiation that falls on it but the black hole that they're looking at specifically the one in the center of our Milky Way galaxy Sagittarius A star has matter around it in an accretion disk in this accretion disk there is dust and gas swirling around here very chaotically. It's incredibly hot. We're talkin to millions of degrees. And it's going really fast as a significant fraction of the speed of light. And it's this matter that the black hole feeds off and gets bigger and bigger over time. But you'll notice that the accretion disk does not extend all the way into the Event Horizon. Why is that well. That's because there is an inner most stable circular orbit and for matter around a non-spinning black hole that orbit is at 3 Swartz Shield radii now in all likelihood the black hole at the center of our galaxy will be spinning but for Simplicity I'm just considering the non-spinning case you can see my video on spinning black holes if you don't want to find out more about that. So this is the innermost orbit for matter going around the black hole if it goes inside this. Orbited very quickly goes into the center of the black hole and we never hear from it again. But there is something that can orbit closer to the black hole and that is light because light has no Mass it can actually orbit at one point. Five short Shield radii. I'm representing it with a ring. But really this could be in any orientation. So it's a sphere of photon orbits and if you were standing there of course you could never go there. But if you could you could look forward and actually see the back of your head cuz the photons could go around and complete that orbit now. The photon sphere is an unstable orbit meaning eventually either the photons have to do spiral into the singularity or spiral out and head off to Infinity another question I want to answer is what does this black quote-unquote shadow in the image correspond to in this picture of what's actually going on around the black hole is it the Event Horizon are we simply looking at this or is it the photon sphere or the innermost stable circular orbit while things are complicated and the reason is this black hole warp space-time around it which changes the path of light rays. So they don't just go in straight lines like we normally imagine that they do I mean they are going in straight lines but Space X curb. So they going curves. So the best way to think of this is maybe to imagine parallel light he's coming in from the observer in Striking this geometry here of course of the parallel light rays cross. The Event Horizon will never see them again. So they're gone that will definitely be a dark region. But if a light Ray comes in just above the Event Horizon it to will get bent and end up crossing the Event Horizon it ends up in the black hole. Even a light-ray coming in the same distance away is the photon sphere will end up getting warped into the black hole and curbing across the Event Horizon so in order for you to get a parallel Ray which does not end up in the black hole you actually have to go out 2.6 radii away if a light Ray comes in 2.6 short Shield radii away it will just graze the photon sphere at its closest approach and then it will go off to infinity and so the resulting shadow that we get looks like this it is 2.6 times bigger than the Event Horizon. You say what are we really looking at here what is this Shadow well in the center of it is the Event. Horizon it Maps pretty cleanly onto the onto the center of the Shadow. But if you think about it light rays going above or below also end up crossing the Event Horizon just on the backside. So in fact what we get is the whole back side of the Event Horizon mapped onto a ring on this Shadow so looking from our one point in space at the black hole we actually get to see the entirety of the black hole's Event Horizon. Maybe it's silly to talk about seeing it because it's completely black but that really is where the points would map to on the shadow it gets weirder than that because the light can come in and go around the back and say get absorbed in the front you get another image of the end Tire Horizon next to that and another annular ring and then another one after that and another one after that. And you get basically infinite images of the Event Horizon as you approach the edge of this Shadow. So what is the first light that we can see it is those light rays that come in at just such an angle that they graze the photon sphere and then end up at power telescopes and they produce Shadow which is 2.6 times the size of the Event Horizon is roughly what we'd see if we happen to be looking perpendicular to the accretion disk but more likely we will be looking at some sort of random angle to the accretion disk we maybe even looking Edge on and in that case do we see this shadow of the black hole you might think that we wouldn't. But the truth is because of the way the black hole warp space-time and bends light rays. We actually see the back of the accretion disk the way it works. Is light rays coming off the accretion disk bend over the top and end up coming to our telescopes so what we end up seeing is something that looks like that similarly light from the bottom of the accretion disk comes underneath gets bent underneath the black hole and comes towards us like that. And this is where we get an image that looks something like the interstellar black hole you can't even crazier than this. Cuz light that comes off the top of the accretion disk here can go around the back of the black hole Gray's the photon sphere and come out the bottom right here producing a very thin ring underneath the shadow similarly light from underneath the accretion disk in the front can go underneath and around the back and come out over the top which is why we see this ring of light here. This is what we could see if we were very close to the black hole something that looks truly spectacular one other really important effect to consider is that the matter in this accretion disk is going very fast close to the speed of light and so if it's coming towards us. It's going to look much brighter and. If it's going away that's called relativistic beaming or Doppler beaming and so one side of the secretion disc is going to look much brighter than the other and that's why we're going to see a bright spot in our image. So hopefully this gives you an idea of what we're really looking at when we look at an image of a black hole if you have any questions about any of this please leave them in the comments below. And I will likely be making a video for the launch of the first ever image of a black hole. So I'll try to answer them then until then I hope you I get as much enjoyment out of this as I have because this is truly been my obsession for like the last week. I guess we'll be excited to watch it over time. How it changes are there's a lot of hope that there a blogs moving around. I know if you see a blown around the front and back. And then you see it in the back of his exact right. But that's going to be kind of cool. </p>
+    </div>
+    <!-- input forms -->
+    <!--
+    <div class="gridder">
+    -->
+    <!--
+      <div class="box1">
+        <form action="#">
+          <h5 class="ind">Keyword</h5>
+          <input class="ind" type="text" name="keyword" required="required" placeholder="Enter keyword" style="border:0px; margin-left: 2em;">
+          <br><br>
+          <h5 class="ind">Video source</h5>
+          <input class="ind" type="text" name="speech" required="required" placeholder="Enter URL" style="border:0px; margin-left: 2em;">
+          <br><br>
+          <input onclick="showTranscript()" type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
+        </form>
+      </div>
+
+      <div class="box3">
+          <form action="#" id="usrform">
+            <h5 class="ind">Enter transcript</h5>
+            <br>
+            <textarea class="ind" id="transcription" rows="10" cols="50" name="comment" form="usrform" placeholder="Paste text here" required="required"></textarea>
+            <br><br>
+            <input type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
+          </form>
+          <br>
+      </div>
+    --></div>
+    <!--
+    <script>
+    function showTranscript() {
+      document.getElementById("transcription").innerHTML = "This should be a transcription of the video. Thanks.";
+    }
+    </script>
+-->
+    <script type="text/javascript">
+        var nodes = null;
+        var edges = null;
+        var network = null;
+
+        //these two variables should later be replaced by variable input
+        //(or something like that; I don't know proper terminology)
+        //  var freqmap = [{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 17, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 16, label: "starfish"}];
+        //  var adjmat = [{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}];
+        var freqmap = [{"id": 0, "value": 0.03040897897563541, "label": "interstellar black hole"}, {"id": 1, "value": 0.030407499335700094, "label": "black hole gray"}, {"id": 2, "value": 0.018832400623279663, "label": "event horizon telescope"}, {"id": 3, "value": 0.01811098047560338, "label": "parallel light ray"}, {"id": 4, "value": 0.017428956341090592, "label": "moc black coal"}, {"id": 5, "value": 0.016477787844846086, "label": "black quote"}, {"id": 6, "value": 0.014917084724265204, "label": "end tire horizon"}, {"id": 7, "value": 0.012733758930167382, "label": "accretion disk bend"}];
+        var adjmat = [{"from": 0, "to": 1, "value": 0.8256116231814516}, {"from": 0, "to": 2, "value": 0.458001625115629}, {"from": 0, "to": 3, "value": 0.5207943536201393}, {"from": 0, "to": 4, "value": 0.5295880121705286}, {"from": 0, "to": 5, "value": 0.5561415188254686}, {"from": 0, "to": 6, "value": 0.5066760477076373}, {"from": 0, "to": 7, "value": 0.5012751138591078}, {"from": 1, "to": 2, "value": 0.3421912054194632}, {"from": 1, "to": 3, "value": 0.5165167425161444}, {"from": 1, "to": 4, "value": 0.6263608333695297}, {"from": 1, "to": 5, "value": 0.6982347054030401}, {"from": 1, "to": 6, "value": 0.5128806152214234}, {"from": 1, "to": 7, "value": 0.3920477238805016}, {"from": 2, "to": 3, "value": 0.5067446512760307}, {"from": 2, "to": 4, "value": 0.21118889952961895}, {"from": 2, "to": 5, "value": 0.23102695535861867}, {"from": 2, "to": 6, "value": 0.6016266381761053}, {"from": 2, "to": 7, "value": 0.3934759401083917}, {"from": 3, "to": 4, "value": 0.35601894088531344}, {"from": 3, "to": 5, "value": 0.3824531974180234}, {"from": 3, "to": 6, "value": 0.5544583778602085}, {"from": 3, "to": 7, "value": 0.4980536020333948}, {"from": 4, "to": 5, "value": 0.5173408988462205}, {"from": 4, "to": 6, "value": 0.3280110419969296}, {"from": 4, "to": 7, "value": 0.23380163683190808}, {"from": 5, "to": 6, "value": 0.4086197697463128}, {"from": 5, "to": 7, "value": 0.21881577894820523}, {"from": 6, "to": 7, "value": 0.48053786045333646}];
+
+        function draw() {
+            // create concepts
+            // value corresponds with importance of concepts
+            nodes = freqmap;
+
+            // create connections between concepts
+            // value corresponds with the relevance between people
+            edges = adjmat;
+
+            // Instantiate our network object.
+            var container = document.getElementById("mynetwork");
+            var data = {
+                nodes: nodes,
+                edges: edges
+            };
+            var options = {
+                nodes: {
+                    shape: "box",
+                    color: {
+                        background: "#303030",
+                        hover: "#555555",
+                        highlight: {
+                            background: "#222222",
+                            border: "#FFF255"
+                        }
+                    },
+                    shadow: {
+                        enabled: true
+                    },
+                    //font.color: "#000000",
+                    font: {
+                        color: "#D0D0D0",
+                    },
+                    scaling: {
+                        customScalingFunction: function(min, max, total, value) {
+                            return value / total;
+                        },
+                        min: 5,
+                        max: 100
+                    },
+                    mass: 1.5
+                },
+                edges: {
+                    color: {
+                        //color:'#848484',
+                        highlight: '#848484',
+                        hover: '#d3d2cd',
+                        inherit: false,
+                        opacity: 1.0
+                    },
+                    shadow: {
+                        enabled: true
+                    }
+                },
+                interaction: {
+                    hover: true
+                }
+            };
+            network = new vis.Network(container, data, options);
+        }
+        window.addEventListener("load", () => {
+            draw();
+        });
+
+        //var js_thing = JSON.parse(jsonthing);
+        //var nodes = new vis.DataSet(eval(freqmap));
+        /*var valList = [];
+        for (var i = 0; i < js_thing.mapping.length; i++) {
+          valList.push(js_thing.mapping[i]);
+        }*/
+        //var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
+        /*var txt = [{id: 1, value: 35, label: "dog"},
+        {id: 2, value: 12, label: "cat"},
+        {id: 3, value: 333, label: "pet"},
+        {id: 4, value: 67, label: "giraffe"},
+        {id: 5, value: 55, label: "starfish"}];
+        //var arr = JSON.parse(txt);
+
+        var nodes = new vis.DataSet(txt);*/
+        /*var array = [
+          {id: 1, value: 35, label: "dog"},
+          {id: 2, value: 12, label: "cat"},
+          {id: 3, value: 333, label: "pet"},
+          {id: 4, value: 67, label: "giraffe"},
+          {id: 5, value: 55, label: "starfish"}
+        ];
+
+        var nodes = new vis.DataSet(array);*/
+
+        //var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
+        //var edges = new vis.DataSet(eval(adjmat));
+
+        /* this function is not used
+        function nodes(relev) {
+          var result = [];
+          var count = 1;
+          for (var i in relev) {
+            result.push({id: count, value: relev[i], label: i});
+            count++;
+          }
+        }*/
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

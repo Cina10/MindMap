@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MindMap</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network@latest/dist/vis-network.min.js"></script>
+    <link href="https://unpkg.com/vis-network@latest/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="style1.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        * {}
+        
+        #mynetwork {
+            width: 65%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            float: right;
+            background-color: transparent;
+        }
+        
+        #userinputinfo {
+            width: 35%;
+            height: 100vh;
+            text-indent: 0%;
+            padding: 30px;
+            float: left;
+            background-color: #303030;
+            overflow-y: scroll;
+        }
+        
+        body {
+            background-color: #1f1f1f;
+        }
+        
+        h1 {
+            color: #909090;
+            font-size: 4em;
+            margin: 0;
+        }
+        
+        h2 {
+            color: #BFBFBF;
+            margin: 0;
+            font-size: 1.5em;
+            background-color: #303030;
+            padding-bottom: 0.2em;
+        }
+        
+        p {
+            color: #999999;
+            font-size: 1.2em;
+            background-color: #303030;
+        }
+        
+        .header {
+            text-align: center;
+            height: 6em;
+            padding-top: 1em;
+        }
+        /*
+		      textarea{
+		        border: 0px;
+		        margin-left: 2em;
+		        width: 90%;
+		      }
+		      h5{
+		        font-size:1.2em;
+		        color: white;
+		      }
+		      .ind {
+		        text-indent: 1%;
+		      }
+		      .gridder{
+		        display: grid;
+		        grid-template-columns: 75% 25%;
+		        grid-gap: 0.5%;
+		      }
+		      .box1{
+		        background:lightskyblue;
+		      }
+		      .box2{
+		        background:lightsteelblue;
+		      }
+		      .box3{
+		        background:lightblue;
+		        grid-row: 1/3;
+		        padding: auto;
+		      }
+		      */
+    </style>
+</head>
+
+<body>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <div class="header">
+        <h1>MindMap: sleep-is-just-death-being-shy</h1>
+    </div>
+    <!-- nav
+    <nav class="navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header navbar-center">
+                <a class="navbar-brand" href="#">Mind Map</a>
+            </div>
+        </div>
+    </nav>
+    -->
+    <!-- network graphic -->
+    <div id="mynetwork" height="500px"></div>
+    <!-- additional information -->
+    <div id="userinputinfo">
+        <!-- Need actual words to fill this part -->
+        <br>
+        <h2>Search word: mind</h2>
+        <br>
+        <br>
+        <h2>Most relevant: brain sleep</h2>
+        <br>
+        <br>
+        <h2>Transcription:</h2>
+        <!-- Transcription in p tags -->
+        <p>I was maybe six years old driving somewhere at night with my dad's. And I took a little nap. And I woke up. And he said where did you go. And I said deny. And he said well what do you reckon sleep. And I said. And he said sleeps kind of weird though. Huh. And I said. And he said sleep is a lot like dying really isn't that. And I said 6:00 fucking is all the Greek god of sleep is called hypnosis. He has a brother. And he's the god of death this is going to be a jolly 10 minutes sleep. Makes no sense and completely defenseless for hours on end and they probably isn't even for saving energy Eva compared to just lying around to wake sleep with say you about a hundred calories or a banana of slightly above-average Guff humans need about 8 hours sleep a nice but our animal friends vary wildly koalas prefer 22 hours bunnies about nine elephants need just full and however badly your day is going I would like to invite you to just enjoy this picture of an owlcan cough take your nap for a moment that that's better. Isn't it mean either but whatever sleep is for it's so essential the nature why didn't do almost every off intelligent organism on the planet for example Dolphins if they slept like us they would drown because they don't have gills and they need oxygen so they sleep you need hemispherectomy that is they float just below the water on one side of their brain sleeps while the other stays awake. Then they stop Iva human death rehearsal excuse me. I mean sleep is a bit more straightforward teeth toilets parts of hysterical crying. And it's off to the Land of Nod stage. 1 brain wave slowed down a bit stage to your post was lay down and. You Begin producing sleep spindles switch a little past the brain waves that why we don't know what they do exactly. But they look cool at the deepest levels of sleep growth hormone. Is released tissue is being repaired then Stage 5 rapid eye movement REM stage your brain kinda paralyzes your body mostly the eyes roll about the face twitchbrainwavz good mental and this is where about 80% of dreams occur anyway the funny part about all this of course is when we not breathing while asleep where do we go. It's just black. Is just Oblivion every night over and over because sleep is just death being shy if we go in use an asteroid was approaching schedule for arrival say 60 years from now. And it was so I can secure wipe out our entire civilization we would probably go. Can you play Wyatt's War. Maybe end of the world before the asteroid even arrived and yet there is an asteroid approaching slowly in the distance. But it only gets one of us at a time when we practice for it every night. And it's. Name is that with an asteroid the whole species will be gone in a few days probably with death as it stands today though maybe we take comfort in the fact that you even though we'll be gone the world who still carry on without us but ignoring technology and politics we do know a bit about the future will Ole Miss out on if it shows you up we can take a little tour of the future just a fun. Let's say sometime in the next few years you become a parent to two children and that the averagegeneration cycle is about 30 years well by the 28th. He's with two generations down the line you are now a grandparent and six humans have inherited do DNA if humans have made it to Mars on November 10th 2084 the colonists will witness the transit of Earth from Mars to the Earth resembling a black desk passing across the Sun 2110 another generation later and a seeming humans have on average two children your children have grandchildren now on you have 14 descendants. It's quite possible they attended your funeral smashed in the pub afterwards and said nice things about your hair nation is probably around 11 billion humans having a full billion in just a Century 21 40s another generation will things being equal 30 humans now carry your jeans 2200 and weight into the 25th Century reached its perihelion you have 62 descendants 20/200 no 6 Generations that's 126 descendants of yours lilu and Korbin Dallas we should only be initiating romantic relationship by the end of this centurythey still have to charge them for Generation you not have 2052 sentence we can no longer even speculate what culture and technology looks like so yeah. 12000 8240 Generations later if sex is even still in fashion do not have at least several million descendants II start and Taurus is just going Supernova probably will be visible from the earth even in daylight 52080 1500 generations of your progeny later and the Earth's rotation would have slowed enough guts to the moon and the moon is out of leap seconds to preserve timekeeping. Yeah. A hundred thousand a D3000 Generations. Later you might recognize the constellations but they'll be altered handle of the Big Dipper getting a little relaxed of the back for example 250,000. A d7500 Generations later loihi currently a submarine volcano in 2019 would have risen out of the ocean and become a volcanic island 2 million. A d the Grand Canyon roads to surround the Colorado River if there is indeed still a Colorado River left 50 million ad Eurasia and Africaforming an Italian you mountain range. Five to six hundred million ad is possible consequence of fused back into a single supercontinent a day on Earth has never happened again 1 billion Haiti the song is now 10% more luminous meaning our oceans have begun to evaporate plant life is unlikely the Milky Way galaxy and our neighboring Galaxy Andromeda Collide Forman Mill, de 10 billion the sun is not 256 times its current size and is almost certainly swallowed Mercury Venus and 1 trillion ad. It's possible the Big Crunch has now begun the remains of the universe falling back in on herself Galactic clusters will begin to converge Stars will collide the resulting explosions Illuminating the heavens nearby and eventually the black holes of the universe will collide with one another and messing into a single super super massive black hole consuming itself one quadrillion. It's also possibleand the universe will continue to expand indefinitely in this scenario the main points of interest for the next owners infant.. Of time will be the decay of nucleons that's protons and neutrons beginning an era in which black holes exist in the universe and a seeming a new universe is not the gun the current Universe would achieve its final resting energy uninhabited it's uninhabitable Byron Perpetual Limitless dog with no recourse to the fecundity the one steamed within the boundaries of creation we all must have gone through that phase is a kid when it hits us more people die eventually and Mom and Dad at people and other person. So I'll God some of us including your pump us the right to had never recovers from that face. It is simply too much to live is the only animal that knows his projects and loves and lifetimes. A limited and when the animal is gone after while it'll be as though the animal never was at school and that is a notion to widen spiky to fit inside the head the things we will miss off the Way. Gone. The party's the best of humans we would come to love old walks with a hugs or the Plucky steps into the dog out of species will take you a homo. Sapiens. Yeah. Right, that's more like the only Animal Control service approaching demise and conscious of the world's approaching demise to. I suspect you like me have run into these people in life are very clever and yet terribly broken because they've looked into the abyss and concluded the on a long enough time scale and in the universe so wise and apparently indifferent we have no ultimate significance and the point has dropped out of everything for them but there is a middle way between denial I'm so fucking important look at my bank balance Etc and despair. There's no point to anything if we will just go off into the dock Etc because the world is just as Fantastical as it is terrific and. It's just as a laboratory to lose hope as it is to find it if everything was forever. But that really changed so much 80 years or a trillion bear. Would still taste just as good wasps would still be Pricks and maybe tomorrow we'll kill aging and death and stay up infinitely past that time. But as it stands today we don't have the science yet. And so God fearing or not we have to find some way of making peace with a thing for you and might be religion. Know some very atmospheric Tuality and fair enough. But I'll tell you what works for me personally like when it's late and. I can't sleep and they're best starts Whispering about how I'm going to go into the dark one day I keep in mind that whether I like it or not I am part of something bigger an experiment conducted across the entire planet and talk to the crossover pastry cool.. Us somewhere in the future we are gone and someone who loves us is remembering us somewhere.. They're gone and someone who loves them is remembering them be in town and we'll rise and fall of Generations how many of us have been and gone down since we became Homo sapiens billions at the very least to have stopped once talked to her a new word and looked it up till yelled at the GPS. Says those the GPS is for you got lost to a watched another human blowing their nose or picking their teeth or something equally disgusting and quietly thoughts oneself off fuck. I falling in love with you. Have a night just to have been anything what a weird honor if sleep is just as being shy waking up is Athens being ridiculous the fact that for about 80 years items know that even atoms I told courtesy of being humans Bus death the city but in between if none of it has any ultimate significant if on a cosmic scale none of it matters does that really fucking matter we won't last forever. But while we're here was silly decision it would be to waste all day out in the cosmos that brief.. Of time what's the World Cup on the world as interesting as this one with her as excellent as yours with all the other talkin carbon units around us that we can hang out with and be fond of and talk shit to and keep the abyss dweller and if over wasn't enough just in case in the woods. Have eyes like a look when a human who left us just lost you when I take you to the valley you see the Blue Hills on the left and the Blue Hills on the right the rainbow in The Vineyards under the rainbow lights in the rainy season and maybe you'll say there it is that's it. But I'll say a little farther. I will go on my hope. And you'll see the roof so the little towns in the hillsides yellow with Wild Oats a buzzard soaring and a woman singing by the shadows of a creek in the dry season. And maybe you say let's stop here. This is it. But I'll say a little father. And we'll go on. And you'll hear the quail calling on the mountain by the Springs of the river and looking back. You'll see the river running down with for the wild Hills behind below and. You'll say isn't that the valley I will be able to say is drink this water at the spring rest here awhile we have a long way yet to go. And I can't go without you. </p>
+    </div>
+    <!-- input forms -->
+    <!--
+    <div class="gridder">
+    -->
+    <!--
+      <div class="box1">
+        <form action="#">
+          <h5 class="ind">Keyword</h5>
+          <input class="ind" type="text" name="keyword" required="required" placeholder="Enter keyword" style="border:0px; margin-left: 2em;">
+          <br><br>
+          <h5 class="ind">Video source</h5>
+          <input class="ind" type="text" name="speech" required="required" placeholder="Enter URL" style="border:0px; margin-left: 2em;">
+          <br><br>
+          <input onclick="showTranscript()" type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
+        </form>
+      </div>
+
+      <div class="box3">
+          <form action="#" id="usrform">
+            <h5 class="ind">Enter transcript</h5>
+            <br>
+            <textarea class="ind" id="transcription" rows="10" cols="50" name="comment" form="usrform" placeholder="Paste text here" required="required"></textarea>
+            <br><br>
+            <input type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
+          </form>
+          <br>
+      </div>
+    --></div>
+    <!--
+    <script>
+    function showTranscript() {
+      document.getElementById("transcription").innerHTML = "This should be a transcription of the video. Thanks.";
+    }
+    </script>
+-->
+    <script type="text/javascript">
+        var nodes = null;
+        var edges = null;
+        var network = null;
+
+        //these two variables should later be replaced by variable input
+        //(or something like that; I don't know proper terminology)
+        //  var freqmap = [{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 17, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 16, label: "starfish"}];
+        //  var adjmat = [{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}];
+        var freqmap = [{"id": 0, "value": 0.008524306081402, "label": "brain sleep"}, {"id": 1, "value": 0.00824436455544398, "label": "iva human death rehearsal"}, {"id": 2, "value": 0.007946601674978454, "label": "sleep growth hormone"}, {"id": 3, "value": 0.007629798193748965, "label": "human bus death"}, {"id": 4, "value": 0.007328859377744802, "label": "single super super massive black hole"}, {"id": 5, "value": 0.00726993225384165, "label": "minute sleep"}, {"id": 6, "value": 0.007269102984572558, "label": "sleep spindle"}, {"id": 7, "value": 0.006284496862273451, "label": "average guff human"}, {"id": 8, "value": 0.0053639656930068716, "label": "neighboring galaxy andromeda collide forman mill"}, {"id": 9, "value": 0.004125162063523368, "label": "homo sapiens billion"}, {"id": 10, "value": 0.0039692736462036545, "label": "current universe"}, {"id": 11, "value": 0.003910657736184648, "label": "milky way galaxy"}, {"id": 12, "value": 0.0038892203833283496, "label": "new universe"}, {"id": 13, "value": 0.0038208256527622166, "label": "uninhabitable byron perpetual limitless dog"}, {"id": 14, "value": 0.003768930191739224, "label": "straightforward tooth toilet part"}];
+        var adjmat = [{"from": 0, "to": 1, "value": 0.4899512040026452}, {"from": 0, "to": 2, "value": 0.7230256710650563}, {"from": 0, "to": 3, "value": 0.5454871000487495}, {"from": 0, "to": 4, "value": 0.36458121457316456}, {"from": 0, "to": 5, "value": 0.758409550395906}, {"from": 0, "to": 6, "value": 0.6812879691541164}, {"from": 0, "to": 7, "value": 0.4182390646856046}, {"from": 0, "to": 8, "value": 0.1698002094110287}, {"from": 0, "to": 9, "value": 0.27128256968846176}, {"from": 0, "to": 10, "value": 0.3538865195065551}, {"from": 0, "to": 11, "value": 0.35069518569785096}, {"from": 0, "to": 12, "value": 0.3508142865638515}, {"from": 0, "to": 13, "value": 0.32973531883062285}, {"from": 0, "to": 14, "value": 0.45956775274685835}, {"from": 1, "to": 2, "value": 0.42335509527970333}, {"from": 1, "to": 3, "value": 0.712768980736468}, {"from": 1, "to": 4, "value": 0.3245009227875971}, {"from": 1, "to": 5, "value": 0.4197676351999078}, {"from": 1, "to": 6, "value": 0.3186782497031566}, {"from": 1, "to": 7, "value": 0.4738061606552553}, {"from": 1, "to": 8, "value": 0.25977320878767113}, {"from": 1, "to": 9, "value": 0.3049498234640827}, {"from": 1, "to": 10, "value": 0.3628930005835781}, {"from": 1, "to": 11, "value": 0.3007026737258203}, {"from": 1, "to": 12, "value": 0.36294061420682155}, {"from": 1, "to": 13, "value": 0.4390460949927814}, {"from": 1, "to": 14, "value": 0.41411543831160563}, {"from": 2, "to": 3, "value": 0.474838310536009}, {"from": 2, "to": 4, "value": 0.32976426618650984}, {"from": 2, "to": 5, "value": 0.5735139290940331}, {"from": 2, "to": 6, "value": 0.5573140164663246}, {"from": 2, "to": 7, "value": 0.4865978319737161}, {"from": 2, "to": 8, "value": 0.113702219562613}, {"from": 2, "to": 9, "value": 0.33108271368112785}, {"from": 2, "to": 10, "value": 0.3499694028551647}, {"from": 2, "to": 11, "value": 0.282143777671209}, {"from": 2, "to": 12, "value": 0.32158774778762783}, {"from": 2, "to": 13, "value": 0.2880048036758337}, {"from": 2, "to": 14, "value": 0.3901821015962362}, {"from": 3, "to": 4, "value": 0.452670579105341}, {"from": 3, "to": 5, "value": 0.4873751786053458}, {"from": 3, "to": 6, "value": 0.38335628237846003}, {"from": 3, "to": 7, "value": 0.5773435283883096}, {"from": 3, "to": 8, "value": 0.28305309052132405}, {"from": 3, "to": 9, "value": 0.3418230546073709}, {"from": 3, "to": 10, "value": 0.4628958179224081}, {"from": 3, "to": 11, "value": 0.3588073773153987}, {"from": 3, "to": 12, "value": 0.4482035892571599}, {"from": 3, "to": 13, "value": 0.37321079580548344}, {"from": 3, "to": 14, "value": 0.4808478347581068}, {"from": 4, "to": 5, "value": 0.4137612216625449}, {"from": 4, "to": 6, "value": 0.35067842392782644}, {"from": 4, "to": 7, "value": 0.3575212119943757}, {"from": 4, "to": 8, "value": 0.3162348100793771}, {"from": 4, "to": 9, "value": 0.3044364258489158}, {"from": 4, "to": 10, "value": 0.4195710752440007}, {"from": 4, "to": 11, "value": 0.572246709519686}, {"from": 4, "to": 12, "value": 0.5139590740991856}, {"from": 4, "to": 13, "value": 0.37361396161065036}, {"from": 4, "to": 14, "value": 0.557217655102575}, {"from": 5, "to": 6, "value": 0.6290349698063583}, {"from": 5, "to": 7, "value": 0.35838526102954765}, {"from": 5, "to": 8, "value": 0.11855877334808464}, {"from": 5, "to": 9, "value": 0.16326330094186794}, {"from": 5, "to": 10, "value": 0.2747062080624395}, {"from": 5, "to": 11, "value": 0.33851541457816164}, {"from": 5, "to": 12, "value": 0.27617116865169}, {"from": 5, "to": 13, "value": 0.2879332877566946}, {"from": 5, "to": 14, "value": 0.4736903972126804}, {"from": 6, "to": 7, "value": 0.27378505043751744}, {"from": 6, "to": 8, "value": 0.23659055275895094}, {"from": 6, "to": 9, "value": 0.16285922913002063}, {"from": 6, "to": 10, "value": 0.19964929303086115}, {"from": 6, "to": 11, "value": 0.29897571408283924}, {"from": 6, "to": 12, "value": 0.19990853217476276}, {"from": 6, "to": 13, "value": 0.200844227678547}, {"from": 6, "to": 14, "value": 0.4470740320575706}, {"from": 7, "to": 8, "value": 0.20831868749671104}, {"from": 7, "to": 9, "value": 0.4429864944497845}, {"from": 7, "to": 10, "value": 0.4882628377249568}, {"from": 7, "to": 11, "value": 0.35974964334862186}, {"from": 7, "to": 12, "value": 0.38434737204169694}, {"from": 7, "to": 13, "value": 0.38067494897829923}, {"from": 7, "to": 14, "value": 0.39971166722844276}, {"from": 8, "to": 9, "value": 0.2666024521131931}, {"from": 8, "to": 10, "value": 0.3273447691958589}, {"from": 8, "to": 11, "value": 0.6072249232859626}, {"from": 8, "to": 12, "value": 0.36387109585768823}, {"from": 8, "to": 13, "value": 0.3982618547213644}, {"from": 8, "to": 14, "value": 0.19099179630445254}, {"from": 9, "to": 10, "value": 0.2985543425018862}, {"from": 9, "to": 11, "value": 0.2870608555251078}, {"from": 9, "to": 12, "value": 0.3108170165020772}, {"from": 9, "to": 13, "value": 0.21580024805656534}, {"from": 9, "to": 14, "value": 0.20615229941026345}, {"from": 10, "to": 11, "value": 0.5048093849684612}, {"from": 10, "to": 12, "value": 0.877290457946788}, {"from": 10, "to": 13, "value": 0.37314562764268555}, {"from": 10, "to": 14, "value": 0.3618971956978554}, {"from": 11, "to": 12, "value": 0.5543719157689314}, {"from": 11, "to": 13, "value": 0.4396645806677252}, {"from": 11, "to": 14, "value": 0.4718517754934108}, {"from": 12, "to": 13, "value": 0.39262990284726007}, {"from": 12, "to": 14, "value": 0.40301238723217236}, {"from": 13, "to": 14, "value": 0.3661592806711757}];
+
+        function draw() {
+            // create concepts
+            // value corresponds with importance of concepts
+            nodes = freqmap;
+
+            // create connections between concepts
+            // value corresponds with the relevance between people
+            edges = adjmat;
+
+            // Instantiate our network object.
+            var container = document.getElementById("mynetwork");
+            var data = {
+                nodes: nodes,
+                edges: edges
+            };
+            var options = {
+                nodes: {
+                    shape: "box",
+                    color: {
+                        background: "#303030",
+                        hover: "#555555",
+                        highlight: {
+                            background: "#222222",
+                            border: "#FFF255"
+                        }
+                    },
+                    shadow: {
+                        enabled: true
+                    },
+                    //font.color: "#000000",
+                    font: {
+                        color: "#D0D0D0",
+                    },
+                    scaling: {
+                        customScalingFunction: function(min, max, total, value) {
+                            return value / total;
+                        },
+                        min: 5,
+                        max: 100
+                    },
+                    mass: 1.5
+                },
+                edges: {
+                    color: {
+                        //color:'#848484',
+                        highlight: '#848484',
+                        hover: '#d3d2cd',
+                        inherit: false,
+                        opacity: 1.0
+                    },
+                    shadow: {
+                        enabled: true
+                    }
+                },
+                interaction: {
+                    hover: true
+                }
+            };
+            network = new vis.Network(container, data, options);
+        }
+        window.addEventListener("load", () => {
+            draw();
+        });
+
+        //var js_thing = JSON.parse(jsonthing);
+        //var nodes = new vis.DataSet(eval(freqmap));
+        /*var valList = [];
+        for (var i = 0; i < js_thing.mapping.length; i++) {
+          valList.push(js_thing.mapping[i]);
+        }*/
+        //var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
+        /*var txt = [{id: 1, value: 35, label: "dog"},
+        {id: 2, value: 12, label: "cat"},
+        {id: 3, value: 333, label: "pet"},
+        {id: 4, value: 67, label: "giraffe"},
+        {id: 5, value: 55, label: "starfish"}];
+        //var arr = JSON.parse(txt);
+
+        var nodes = new vis.DataSet(txt);*/
+        /*var array = [
+          {id: 1, value: 35, label: "dog"},
+          {id: 2, value: 12, label: "cat"},
+          {id: 3, value: 333, label: "pet"},
+          {id: 4, value: 67, label: "giraffe"},
+          {id: 5, value: 55, label: "starfish"}
+        ];
+
+        var nodes = new vis.DataSet(array);*/
+
+        //var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
+        //var edges = new vis.DataSet(eval(adjmat));
+
+        /* this function is not used
+        function nodes(relev) {
+          var result = [];
+          var count = 1;
+          for (var i in relev) {
+            result.push({id: count, value: relev[i], label: i});
+            count++;
+          }
+        }*/
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

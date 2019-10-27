@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MindMap</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network@latest/dist/vis-network.min.js"></script>
+    <link href="https://unpkg.com/vis-network@latest/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="style1.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        * {}
+        
+        #mynetwork {
+            width: 65%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            float: right;
+            background-color: transparent;
+        }
+        
+        #userinputinfo {
+            width: 35%;
+            height: 100vh;
+            text-indent: 0%;
+            padding: 30px;
+            float: left;
+            background-color: #303030;
+            overflow-y: scroll;
+        }
+        
+        body {
+            background-color: #1f1f1f;
+        }
+        
+        h1 {
+            color: #909090;
+            font-size: 4em;
+            margin: 0;
+        }
+        
+        h2 {
+            color: #BFBFBF;
+            margin: 0;
+            font-size: 1.5em;
+            background-color: #303030;
+            padding-bottom: 0.2em;
+        }
+        
+        p {
+            color: #999999;
+            font-size: 1.2em;
+            background-color: #303030;
+        }
+        
+        .header {
+            text-align: center;
+            height: 6em;
+            padding-top: 1em;
+        }
+        /*
+		      textarea{
+		        border: 0px;
+		        margin-left: 2em;
+		        width: 90%;
+		      }
+		      h5{
+		        font-size:1.2em;
+		        color: white;
+		      }
+		      .ind {
+		        text-indent: 1%;
+		      }
+		      .gridder{
+		        display: grid;
+		        grid-template-columns: 75% 25%;
+		        grid-gap: 0.5%;
+		      }
+		      .box1{
+		        background:lightskyblue;
+		      }
+		      .box2{
+		        background:lightsteelblue;
+		      }
+		      .box3{
+		        background:lightblue;
+		        grid-row: 1/3;
+		        padding: auto;
+		      }
+		      */
+    </style>
+</head>
+
+<body>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <div class="header">
+        <h1>MindMap: stress-friend</h1>
+    </div>
+    <!-- nav
+    <nav class="navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header navbar-center">
+                <a class="navbar-brand" href="#">Mind Map</a>
+            </div>
+        </div>
+    </nav>
+    -->
+    <!-- network graphic -->
+    <div id="mynetwork" height="500px"></div>
+    <!-- additional information -->
+    <div id="userinputinfo">
+        <!-- Need actual words to fill this part -->
+        <br>
+        <h2>Search word: depression</h2>
+        <br>
+        <br>
+        <h2>Most relevant: stress stress</h2>
+        <br>
+        <br>
+        <h2>Transcription:</h2>
+        <!-- Transcription in p tags -->
+        <p>I have a confession to make but first I want you to make a little confession to me in the past year. I'm just raise your hand if you've experienced relatively little stress anyone a moderate amount of stress who's experienced a lot of stress. Yeah. Me too. But that is not my confession. My Confession is this. I'm a health psychologist and my mission. Is to help people be happier and healthier but. I fear that something I've been teaching for the last 10 years is doing more harm than good and it has to do with stress for years I've been telling people stress. Makes you sick. It increases the risk of everything from the common cold the cardiovascular disease basically I've turn stress into the enemy. But I've changed my mind about stress. And today I want to change yours. Let me start with the study that made me rethink my whole approach to stress this study tracked 30,000 adults in the United States for 8 years and they started by asking people how much stress have you experienced in the last year they also asked do you believe that stress is harmful for your health. And then they use public death records to find out who died some bad news. First people who experienced a lot of stress in the previous year had a 43% increase risk of dying but that was only true for the people who also believed that stress is harmful for your health people who experience a lot of stress but did not view stress is harmful or no more likely to die in fact they had the lowest risk of dying of anyone in the study including people who have relatively little stress another researcher to estimated that over the eight years they were tracking Des 182,000 Americans died prematurely not from stress but from the belief that stress is bad for you that is over twenty thousand deaths a year if that estimate is correct that would make believing stress is bad for you the 15th largest cause of death in the United States last year killing more people than skin cancer HIV AIDS and homicide you can see why the study freaks me out here. I've been spending so much energy telling people stress. Is bad for your health so this that he got me wondering can changing how you think about stress make you healthier and hear the science says yes when you change your mind about stress you can change your body's response to stress now.. Explain how this works. I want you all to pretend that you are participants in a study designed to stress you out. It's called the social stress test you come into the laboratory. And you're told you have to give a 5-minute impromptu speech on your personal weaknesses to a panel of experts evaluator sitting right in front of you and to make sure you feel the pressure there are bright lights and a camera in your face kind of like this and the evaluators have been trained to give you discouraging nonverbal feedback like this now that you're sufficiently demoralized time for part to a math test and unbeknownst to you the experimenter has been trained to harass you during it now we're going all do this together. It's going to be fun for me. I want you all to count backwards from 996 in increments of 7 is out loud as fast as you can starting with 996 go. Go faster faster please you're going too slow stop stop stop stop that guy made a mistake we're going to have to start all over again you're not very good at this. Are you. Okay. So you got the idea that if you were actually in this study you probably be a little stressed out your heart might be pounding you might be breathing fast or maybe breaking out into a sweat and normally we interpret these physical changes as anxiety or signs that we aren't coping very well with the pressure but what if you view them instead as signs that your body was energized Was preparing you to meet this challenge now that is exactly what participants were told in a study conducted at Harvard University before they went through the social stress test. They were taught to rethink their stress response is helpful that pounding heart is preparing you for Action if you're breathing faster. It's no problem it's getting more oxygen to your brain. I'm purchasing to learn to view the stress response as helpful for their performance. But they were less stressed out less anxious more confident but the most fascinating finding to me was how their physical stress response changed not a typical stress respond your heart rate goes up and your blood vessels constrict like this this is one of the reasons that chronic stress is sometimes associated with cardiovascular disease it's not really healthy to be in the state all the time. But in the study when participants view their stress response is helpful their blood vessel stayed relaxed like this the heart was still pounding but this is a much healthier cardiovascular profile it actually looks a lot like what happens in moments of joy and courage over a lifetime of stressful experiences this one biological change could be the difference between a stress-induced heart attack at age 50 and living well into your 90 and this is really what the new science of stress reveals that how you think about stress matters. So my goal is a health psychologist has changed. I no longer want to get rid of your stress. I want to make you better at stress. And we just did a little intervention if you raised her hand and said you'd had a lot of stress in the last year we could have saved her life because hopefully the next time your heart is pounding from stress. You're going to remember this talk. And you're going to sing to yourself. This is my body helping me rise to this challenge and when you view stress and that way your body believes you and your stress response becomes healthier now. I said I have over a decade of demonizing stress to redeem myself from. So we are going to do one more intervention I want to tell you about one of the most under-appreciated aspects of the stress response and the idea is this stress makes you social understand this I distress we need to talk about a hormone oxytocin. And I know oxytocin has already gotten as much hype as a hormone. Can get it even has its own cute nickname the cuddle hormone because it's release when you hug someone but this is a very small part of what oxytocin is involved in oxytocin. Is a neurohormone Define Tunes. Your brains social instincts it primes you to do things that strengthen close relationships oxytocin makes you crave physical contact with your friends and family it enhances your empathy. It even makes you more willing to help and support the people you care about some people have even suggested we should snort oxytocin become more compassionate and caring but here's what most people don't understand about oxytocin. It's a stress hormone. Your pituitary gland comes to stuff out as part of the stress response. It's as much a part of your stress response as the adrenaline that makes your heart pound and when oxytocin is released in the stress response it is motivating you to seek support. Your biological stress response is nudging you to tell someone how you feel instead of bottling it up your stress response once to make sure you notice when someone else in your life is struggling so that you can support each other when life is difficult your stress response once you to be surrounded by people who care about you. Okay. So how is knowing this side of stress going to make you healthier Cheetos and. Doesn't only act on your brain it also acts on your body and one of its main roles in your body is to protect your cardiovascular system from the effects of stress it's a natural anti-inflammatory it. Also helps your blood vessels stay relaxed during stress but my favorite effect on the body is actually on the heart your heart has receptors for this hormone and oxytocin helps heart cells regenerate and heal from any stress induced damage this stress hormone strengthens your heart and the cool thing is is that all of these physical benefits of oxytocin are enhanced by social contact and social support so when you reach out to others under stress either to seek support or to help someone else you release more of this hormone your stress response becomes healthier and you actually recover faster from stress I find this amazing that your stress response has a built-in mechanism for stress resilience and that mechanism is human connection I want to finish by telling you about one more studying and listen up cuz this study could also save a life the study tracked about 1000 adults in the United States and they ranged in age from 34 to 93 I started to study by asking how much stress have you experienced in the last year they also asked how much time have you spent helping out friends neighbors people in your community. And then they use public records for the next five years to find out who.. Okay so the bad news first for every major stressful life experience like financial difficulties or family crisis that increase the risk of dying by 30%. But. And I hope you are expecting a. But by now but that wasn't true for everyone people who spent time caring for others showed absolutely no stress related increase in dying 0. Karen created resilience until we see once again that the harmful effects of stress on your health or not inevitable how you think and how you act can transform your experience of stress when you choose to view your stress response as helpful you create the biology of Courage and when you choose to connect with others under stress you can create resilience I wouldn't necessarily ask for more stressful experiences in my life but the science is giving me a whole new appreciation for stress stress gives us access to our hearts the Compassionate Heart That finds joy and meaning and connecting with others. And yes you're pounding physical heart working so hard to give you strength and energy and when you choose to be stressing this way you're not just getting better at stress you're actually making a pretty profound statement you're saying that you can trust yourself to handle life's challenges and you're remembering that you don't have to face them alone. I'm getting. Some this is kind of amazing when you're telling us. It's just it seems amazing to me that a belief about stress can make so much difference to someone's life expectancy How would how would that extend to advise if someone is making a lifestyle choice between says stressful job and non stressful job. Is it doesn't matter which way they go that it's it's equally wise to go for the stressful job so long as you believe that you can handle it and some sense in trying to avoid discomfort. And so I would say that's really the best way to make decisions is go after what it is it creates meaning in your life and then trust yourself to handle the stress that follows. </p>
+    </div>
+    <!-- input forms -->
+    <!--
+    <div class="gridder">
+    -->
+    <!--
+      <div class="box1">
+        <form action="#">
+          <h5 class="ind">Keyword</h5>
+          <input class="ind" type="text" name="keyword" required="required" placeholder="Enter keyword" style="border:0px; margin-left: 2em;">
+          <br><br>
+          <h5 class="ind">Video source</h5>
+          <input class="ind" type="text" name="speech" required="required" placeholder="Enter URL" style="border:0px; margin-left: 2em;">
+          <br><br>
+          <input onclick="showTranscript()" type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
+        </form>
+      </div>
+
+      <div class="box3">
+          <form action="#" id="usrform">
+            <h5 class="ind">Enter transcript</h5>
+            <br>
+            <textarea class="ind" id="transcription" rows="10" cols="50" name="comment" form="usrform" placeholder="Paste text here" required="required"></textarea>
+            <br><br>
+            <input type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
+          </form>
+          <br>
+      </div>
+    --></div>
+    <!--
+    <script>
+    function showTranscript() {
+      document.getElementById("transcription").innerHTML = "This should be a transcription of the video. Thanks.";
+    }
+    </script>
+-->
+    <script type="text/javascript">
+        var nodes = null;
+        var edges = null;
+        var network = null;
+
+        //these two variables should later be replaced by variable input
+        //(or something like that; I don't know proper terminology)
+        //  var freqmap = [{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 17, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 16, label: "starfish"}];
+        //  var adjmat = [{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}];
+        var freqmap = [{"id": 0, "value": 0.13412561107081641, "label": "-PRON- biological stress response"}, {"id": 1, "value": 0.10208586885871353, "label": "-PRON- brain social instinct"}, {"id": 2, "value": 0.09844535419559944, "label": "-PRON- confession"}, {"id": 3, "value": 0.09838637935159487, "label": "-PRON- pituitary gland"}, {"id": 4, "value": 0.05902564496209609, "label": "stress stress"}, {"id": 5, "value": 0.03858761159749817, "label": "physical stress response"}, {"id": 6, "value": 0.03595547501102405, "label": "people stress"}, {"id": 7, "value": 0.033926366764244625, "label": "social stress test"}];
+        var adjmat = [{"from": 0, "to": 1, "value": 0.6443482782551758}, {"from": 0, "to": 2, "value": 0.2555591961710174}, {"from": 0, "to": 3, "value": 0.38188477241249047}, {"from": 0, "to": 4, "value": 0.781865297457864}, {"from": 0, "to": 5, "value": 0.9058495066014355}, {"from": 0, "to": 6, "value": 0.7323443243640722}, {"from": 0, "to": 7, "value": 0.7684071406234843}, {"from": 1, "to": 2, "value": 0.25242876050709473}, {"from": 1, "to": 3, "value": 0.3557104263435184}, {"from": 1, "to": 4, "value": 0.5442125243253612}, {"from": 1, "to": 5, "value": 0.6414118642661496}, {"from": 1, "to": 6, "value": 0.6375714889505902}, {"from": 1, "to": 7, "value": 0.739305288652087}, {"from": 2, "to": 3, "value": 0.03424028131721238}, {"from": 2, "to": 4, "value": 0.1944651256072739}, {"from": 2, "to": 5, "value": 0.26616505261273}, {"from": 2, "to": 6, "value": 0.22699775078624043}, {"from": 2, "to": 7, "value": 0.21626310427648524}, {"from": 3, "to": 4, "value": 0.33488332769137386}, {"from": 3, "to": 5, "value": 0.33490401841031314}, {"from": 3, "to": 6, "value": 0.2543728329189904}, {"from": 3, "to": 7, "value": 0.2517048031138342}, {"from": 4, "to": 5, "value": 0.8482208749161501}, {"from": 4, "to": 6, "value": 0.8515333548107706}, {"from": 4, "to": 7, "value": 0.7874294893505354}, {"from": 5, "to": 6, "value": 0.8090466880202003}, {"from": 5, "to": 7, "value": 0.812422538844353}, {"from": 6, "to": 7, "value": 0.7976227377652926}];
+
+        function draw() {
+            // create concepts
+            // value corresponds with importance of concepts
+            nodes = freqmap;
+
+            // create connections between concepts
+            // value corresponds with the relevance between people
+            edges = adjmat;
+
+            // Instantiate our network object.
+            var container = document.getElementById("mynetwork");
+            var data = {
+                nodes: nodes,
+                edges: edges
+            };
+            var options = {
+                nodes: {
+                    shape: "box",
+                    color: {
+                        background: "#303030",
+                        hover: "#555555",
+                        highlight: {
+                            background: "#222222",
+                            border: "#FFF255"
+                        }
+                    },
+                    shadow: {
+                        enabled: true
+                    },
+                    //font.color: "#000000",
+                    font: {
+                        color: "#D0D0D0",
+                    },
+                    scaling: {
+                        customScalingFunction: function(min, max, total, value) {
+                            return value / total;
+                        },
+                        min: 5,
+                        max: 100
+                    },
+                    mass: 1.5
+                },
+                edges: {
+                    color: {
+                        //color:'#848484',
+                        highlight: '#848484',
+                        hover: '#d3d2cd',
+                        inherit: false,
+                        opacity: 1.0
+                    },
+                    shadow: {
+                        enabled: true
+                    }
+                },
+                interaction: {
+                    hover: true
+                }
+            };
+            network = new vis.Network(container, data, options);
+        }
+        window.addEventListener("load", () => {
+            draw();
+        });
+
+        //var js_thing = JSON.parse(jsonthing);
+        //var nodes = new vis.DataSet(eval(freqmap));
+        /*var valList = [];
+        for (var i = 0; i < js_thing.mapping.length; i++) {
+          valList.push(js_thing.mapping[i]);
+        }*/
+        //var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
+        /*var txt = [{id: 1, value: 35, label: "dog"},
+        {id: 2, value: 12, label: "cat"},
+        {id: 3, value: 333, label: "pet"},
+        {id: 4, value: 67, label: "giraffe"},
+        {id: 5, value: 55, label: "starfish"}];
+        //var arr = JSON.parse(txt);
+
+        var nodes = new vis.DataSet(txt);*/
+        /*var array = [
+          {id: 1, value: 35, label: "dog"},
+          {id: 2, value: 12, label: "cat"},
+          {id: 3, value: 333, label: "pet"},
+          {id: 4, value: 67, label: "giraffe"},
+          {id: 5, value: 55, label: "starfish"}
+        ];
+
+        var nodes = new vis.DataSet(array);*/
+
+        //var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
+        //var edges = new vis.DataSet(eval(adjmat));
+
+        /* this function is not used
+        function nodes(relev) {
+          var result = [];
+          var count = 1;
+          for (var i in relev) {
+            result.push({id: count, value: relev[i], label: i});
+            count++;
+          }
+        }*/
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

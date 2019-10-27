@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MindMap</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network@latest/dist/vis-network.min.js"></script>
+    <link href="https://unpkg.com/vis-network@latest/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="style1.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        * {}
+        
+        #mynetwork {
+            width: 65%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            float: right;
+            background-color: transparent;
+        }
+        
+        #userinputinfo {
+            width: 35%;
+            height: 100vh;
+            text-indent: 0%;
+            padding: 30px;
+            float: left;
+            background-color: #303030;
+            overflow-y: scroll;
+        }
+        
+        body {
+            background-color: #1f1f1f;
+        }
+        
+        h1 {
+            color: #909090;
+            font-size: 4em;
+            margin: 0;
+        }
+        
+        h2 {
+            color: #BFBFBF;
+            margin: 0;
+            font-size: 1.5em;
+            background-color: #303030;
+            padding-bottom: 0.2em;
+        }
+        
+        p {
+            color: #999999;
+            font-size: 1.2em;
+            background-color: #303030;
+        }
+        
+        .header {
+            text-align: center;
+            height: 6em;
+            padding-top: 1em;
+        }
+        /*
+		      textarea{
+		        border: 0px;
+		        margin-left: 2em;
+		        width: 90%;
+		      }
+		      h5{
+		        font-size:1.2em;
+		        color: white;
+		      }
+		      .ind {
+		        text-indent: 1%;
+		      }
+		      .gridder{
+		        display: grid;
+		        grid-template-columns: 75% 25%;
+		        grid-gap: 0.5%;
+		      }
+		      .box1{
+		        background:lightskyblue;
+		      }
+		      .box2{
+		        background:lightsteelblue;
+		      }
+		      .box3{
+		        background:lightblue;
+		        grid-row: 1/3;
+		        padding: auto;
+		      }
+		      */
+    </style>
+</head>
+
+<body>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <div class="header">
+        <h1>MindMap: spot-a-liar</h1>
+    </div>
+    <!-- nav
+    <nav class="navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header navbar-center">
+                <a class="navbar-brand" href="#">Mind Map</a>
+            </div>
+        </div>
+    </nav>
+    -->
+    <!-- network graphic -->
+    <div id="mynetwork" height="500px"></div>
+    <!-- additional information -->
+    <div id="userinputinfo">
+        <!-- Need actual words to fill this part -->
+        <br>
+        <h2>Search word: fake</h2>
+        <br>
+        <h2>Most relevant: like honey deception</h2>
+        <br>
+        <h2>Match quality: 48%</h2>
+        <br>
+        <h2>Transcription:</h2>
+        <!-- Transcription in p tags -->
+        <p>Okay now I don't want to alarm anybody in this room. But it's just come to my attention that the person to your right is a liar also the person to your left. Is a liar also the person sitting in your very seats is a liar we're all liars what I'm going to do today. So I'm going to show you what the research says about why we're all liars how you can become a lights Potter and why you might want to go the extra mile and go from light spotting to truth-seeking ultimately did trust building no speaking of trust ever since I wrote this book light spotting no one wants to meet me in person anymore. No. No. No. No. No. It's okay. Will email you. I can't even get a coffee date at Starbucks my husband's like honey deception maybe you could have focused on cooking have a French cooking so before I get started what I'm going to do. Is I'm going to clarify my goal for you which is not the teacher Game of gacha Life spiders. Aren't those in nit picky kids as kids in the back of the room that our chatting got you got you. Your eyebrow twitch. You cleared your nostril. I watch that TV show lie to me. I know you're lying. No life spiders are armed with scientific knowledge of how to spot deception they use it to get to the truth and they do want mature leaders do everyday they have difficult conversations with difficult people sometimes during very difficult times and they start up that path by accepting a core proposition and that propositions the following lying. It's a Cooperative Act. Think about it a lie has no power whatsoever bites me or other ends its power emerges when someone else agrees to believe the lie. So I know it may sound like tough love but look if it's some point you got lied to it's cuz you agreed to get lied to treat another one about like lines. Are Cooperative act. Now not all eyes are harmful sometimes we're willing participant in deception for the sake of social dignity maybe to keep a secret that should be kept secret secret we say nice song honey you don't look fat in that know. Or we say favorite of the digerati fish that email out of my spam folder. I'm so sorry. But there are times when we are unwilling participants in deception and that can have dramatic cost for us last year. So I 997 billion dollars in corporate fraud alone in the United States that's an eyelash under a trillion dollars at 7% of revenues deception cost billions think and Ron mad off the mortgage crisis or in the case of double agents and traitors like Robert Hansen or Aldrich Ames. Lies can betray our country they can compromise our security they can undermine democracy they can cause the deaths of those that defend us deceptions actually serious business this con man Henry Oberlander. He was such an effective con man British authorities say he could have undermined the entire banking system of the western world. And you can't find this guy on Google. You can't find him anywhere he was interviewed once. And he said the following you said look I've got one rule and this was Henry's room he said love everyone is willing to give you something they're ready to give you something for whatever it is they're hungry for. And that's the Crux of it if you don't want to be deceived. You have to know what is it that you're hungry for and we all kind of hate to admit it. You know. We've been kind of wish we were better husbands better wives smarter. More powerful taller Richard list goes on lying is an attempt to bridge that Gap to connect our wishes that our fantasies about who we wish we were how we wish we could be with what we really like and boy are we willing to fill in those gaps in our lives with life on a given day studies show that you may be lied to anywhere from 10 to 200 times now granted many of those are white lies but in another study it showed that strangers like three times within the first 10 minutes of meeting each other not when we first hear this data we require oil we can't believe how prevalent line is we're centrally against lying but if you look more closely the Pod actually thickens we lie more to strangers that we lie to coworkers extroverts lie more than introverts men like eight times more about themselves and they do other people women lie more to protect other people if you're in an average married couple you're going to lie to your spouse in one out of every ten interactions now. You may think that's bad if you're unmarried that number drops to three lines komplex it's woven into the fabric of our daily and our business lights were deeply ambivalent about the truth we parked it out on an as-needed basis sometimes her very very good reasons and other times just cuz we don't understand the gaps in our lives that stirs number to about line or against lying but we're covertly for it and ways that our society has sanctioned for centuries and centuries and centuries. It's as old as breathing part of our culture is part of our history. Thank Dante Shakespeare the Bible News of the World buying has evolutionary value to us as a species researchers have long known that the more intelligent the species that the larger the neocortex the more likely it is to be deceptive that you might remember Coco does anybody remember Koko the gorilla who is taught sign language Coco was taught to communicate via sign language here's Coco with her kitten so cute little fluffy pet kitten Coco once blamed her pet kitten for ripping a sink out of the wall we're hardwired to become leaders of the packet. Starts really really early how early. Will babies will Seca cry pause wait to see who's coming and then go right back to crying 1 year olds learn concealment. 2 year olds Bluff five-year-old lie outright. They manipulate their flattery nine-year-olds masters of the cover up by the time you enter college or going to lie to your mom and one out of every five interactions by the time we enter this work world. And we're Breadwinners. We enter a world that is just cluttered with Spam fake digital friends partisan media and genius identity thieves world-class Ponzi schemers a deception epidemic in short one author. Cause a post truth. Society. It's been very confusing for a long time now what do you do well there. Steps we can take to navigate our way through the morass tray and lies spiders get to the truth. 90% of the time the rest of us were only 54% accurate why is it so easy to learn. Well they're good liars. And they're bad Liars there. No real original Liars. We all make the same mistakes we all use the same techniques so what I'm going to do. Is I'm going to show you two patterns of deception. And then we're going to look at the hot spots and see if we can find ourselves we're going to start with speech. I want you to listen to me. I'm going to say this again I did not have sexual relations with that woman Miss Lewinsky. I never told anybody to lie and not a single time you never these allegations are false and I need to go back to work for the American people. Okay. What were. The Tell-Tale signs well first we heard was known as a non-contracted denial studies show that people who are overdetermined in their denial resort to formal rather than informal language we also heard distancing language. That woman we know that Liars will unconsciously distance themselves from their subject using languages their tool now spill Clinton. Is so well to tell you the truth or Richard Nixon's favorite in all Candor he would have been a dead giveaway for any loss Potter that knows the qualifying language is it's called qualifying language like that for their discredit the subject. Now he repeated the question in its entirety or if you add peppered his account with a little too much detail and we're all really glad he didn't do that he would have further discredited himself. Floyd had it right for it said look there's much more to it than speech no mortal can keep a secret if his lips are silent he chat with his fingertips and we all do it no matter how powerful you are we all chatter with our fingertips. I'm going to show you domenick strauss-kahn with Obama who's chattering of his fingertips. Now this brings us to our next pattern which is body language quit body language ears what you got to do. You really got to just throw your assumptions out the door. Let the science temper your knowledge a little bit because we think Liars fidget. All the time well guess what they're known to freeze their upper bodies when Airline we think buyers won't look in the eyes will guess what they look in the eyes a little too much just to compensate for that myth we think warm. Then Smiles convey honesty sincerity but a trained life's better can spot a fake smile a mile away can you all spot the fake smile here. You can consciously contrack the muscles in your cheeks but the real Smiles in the eyes the crows Through The Eyes. They cannot be consciously contracted especially if you overdid the botox don't overdo the botox. Nobody will think you're honest now we're going to look at the hot spots. Can you tell what's happening in a conversation can you start to find the hot spots to see the discrepancies between someone's words and someone's actions and. I know it seems really obvious but when you're having a conversation with someone that you suspect of deception attitude overlooked but telling of indicators and honest person is going to be cooperative. They're going to show them they're going to be there going to be willing and helpful and getting you to the truth. Are going to be willing to brainstorm name suspects provide details they're going to say hey maybe with us guys in payroll that worthless checks going to be infuriated if they sent the wrong accused about the entire course of the interview not just in flashes they'll be in.. Address. The entire course of the interview and if you ask someone honest what should happen to whoever did Forge those checks and honest person is much more likely to recommend strict rather than lenient punishment but let's say you're having that exact same conversation with someone deceptive that person may be withdrawn look down lower their voice pause be kind of herky-jerky ask her the SEPTA person to tell their story they're going to Pepper it with way too much detail in all kinds of the relevant places and then they're going to tell their story and strict chronological order I want a trained interrogator does as they come in at a very subtle ways and over the course of several hours they will ask that person to tell their story back. And then I'll watch them squirm and track which questions produce the highest volume of deceptive. Tells why do they do that. Well we all do the same thing we rehearse our words. But we rarely rehearse. Are Jesters. We say yes we shake our heads know we tell Gary convincing Stories. We slightly shrug our shoulders we commit terrible crimes and we smile at the delight and getting away with it now that smile is known in the trade is duping Delight we're going to see that and several videos moving forward. But we're going to start for those of you that don't know him. This is presidential candidate John Edwards who shocked America by fathering a child out of wedlock we're going to see him talk about getting a paternity test to see now if you can spot him saying yes while shaking his head no slightly shrugging his shoulders. Lassitude happy to participate in one I know that is not possible that this job could be mine because of the timing of events. So I know it's not possible happy to take a paternity test and would love to see that happen are you going to do that. Soon is there somebody from Campbell to one side. Okay. That's head shakes. Are much easier to spot one to know to look for them now they're going to be times when someone makes one expression will masking another that just kind of leaks through in a Flash murders are known to leak saddest your new joint venture partner might shake your hand celebrate go out to dinner with you and then leak and expression of anger and we're not all going to become facial expression experts overnight here. But there's one I can teach you the true a dangerous. And that's easy to learn. And that's the expression of contempt does anger. You got two people on an even playing field is still somewhat of a healthy relationship of an anger turns to contempt. You've been dismissed. It's associated with moral superiority and for that reason. Is very very hard to recover from here. 's what it looks like it's marked by one lip. Corner pulled up and in it's the only asymmetrical expression and in the presence of contempt whether or not deception follows. And it doesn't always follow look. The other way go. The other direction reconsider the deal say no thank you. I'm not coming up for just one more night cap. Thank you. Science has surfaced many many more indicators we know for example we know Liars will shift their blink rate Point their feet towards an exit they will take very rare objects and put them between them self in the person that's interviewing them to alter their vocal tone up and making them making their vocal tone much lower. The here's the deal these behaviors are just. Behavior. They're not proof of deception there red flags were human beings we make deceptive flailing Jesters all over the place. All day long they don't mean anything in and of themselves. But when is the clusters of them that's our signal. Look listen. Probe ask some hard questions get out of that very comfortable mode of knowing walking to curiosity mode ask more questions have a little dignity treat the person you're talking to with a poor don't try to be like those folks on Law & Order in those other TV shows that pummeled their subjects into submission don't be too aggressive. It doesn't work now. We talked a little bit about how to talk to someone who's lying and we have a spot a lie. And I promise we're now going to look at what the truth looks like. But I'm going to show YouTube videos to mothers one. Is line one is telling the truth in these were surfaced by researcher David Matsumoto in California. And I think there's an excellent example of what the truth looks like this mother Diane Downs shot her kids at close range drove them to the hospital while they bled all over the car claimed a Scraggy heard strange or did it. And you'll see when you see the video she can't even pretend to be an agonizing mother what you want to look for here is an incredible discrepancy between horrific events that she describes and her very very cool demeanor. And if you look closely you'll see duping Delight throughout this video as I can see Kristen reaching her hand out to me while I'm driving and the blood just keep coming out of her mouth and that maybe it'll Fade to with time. But I don't think so that haunts me the most. Now I'm going to show you a video of an actual grieving mother Erin runnion confronting her daughter's murder and torture in court. Hear you're going to say no false emotion just the authentic expression of a mother's Agony. I wrote the statement on the third anniversary of the night you took my baby and you hurt her then your crush.. She terrified her until her heart stopped. Then she fought and I know she thought you might know. She looked at you with those amazing brown eyes and you still wanted to kill her. And I don't understand it. And I never will okay. There's no doubt in the veracity of those emotions another technology around what the truth looks like is progressing on the science of it we know for example that we now have specialized I Packers infrared brain scans and MRIs that can decode the signals that our body send out. And we're trying to be deceptive and. These Technologies are going to be marketed all of us as Tennessee is for and they will prove incredibly useful someday. But you got to ask yourself in the meantime who do you want on your side of the meeting someone who's trained and getting to the truth or some guy is going to drag a 400-pound electroencephalogram through the door my spotters rely on human tools they know as someone once said character is who you are in the dark. What kind of interesting is that today we have so little Darkness our world is lit up 24 hours a day. It's transparent with blogs and social networks broadcasting the buzz of a whole new generation of people that have made a choice to live their lives in public. It's a much more noisy world. The One Challenge we have is to remember oversharing that's not honesty automatic tweeting and texting can blind us to the fact that the subtleties of human decency character integrity that's still at matters that's always what's going to matter so in this much noisier World it might make sense for us to be just a little bit more explicit about our moral code when you combine the science of recognizing deception with the art of looking listening you exempt yourself from collaborating in a lie you start up that path of being just a little bit more explicit because you signal to everyone around you you say hey my world our world. It's going to be an honest one my world is going to be one where truth is strengthened and false it is recognized and marginalized and when you do that the ground around you starts to shift just a little bit. And that's the truth. </p>
+    </div>
+    <!-- input forms -->
+    <!--
+    <div class="gridder">
+    -->
+    <!--
+      <div class="box1">
+        <form action="#">
+          <h5 class="ind">Keyword</h5>
+          <input class="ind" type="text" name="keyword" required="required" placeholder="Enter keyword" style="border:0px; margin-left: 2em;">
+          <br><br>
+          <h5 class="ind">Video source</h5>
+          <input class="ind" type="text" name="speech" required="required" placeholder="Enter URL" style="border:0px; margin-left: 2em;">
+          <br><br>
+          <input onclick="showTranscript()" type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
+        </form>
+      </div>
+
+      <div class="box3">
+          <form action="#" id="usrform">
+            <h5 class="ind">Enter transcript</h5>
+            <br>
+            <textarea class="ind" id="transcription" rows="10" cols="50" name="comment" form="usrform" placeholder="Paste text here" required="required"></textarea>
+            <br><br>
+            <input type="submit" style="background-color:slategrey; margin-right: 5px; border: 0px; float:right; color:white">
+          </form>
+          <br>
+      </div>
+    --></div>
+    <!--
+    <script>
+    function showTranscript() {
+      document.getElementById("transcription").innerHTML = "This should be a transcription of the video. Thanks.";
+    }
+    </script>
+-->
+    <script type="text/javascript">
+        var nodes = null;
+        var edges = null;
+        var network = null;
+
+        //these two variables should later be replaced by variable input
+        //(or something like that; I don't know proper terminology)
+        //  var freqmap = [{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 17, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 16, label: "starfish"}];
+        //  var adjmat = [{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}];
+        var freqmap = [{"id": 0, "value": 0.09540073634450467, "label": "-PRON- eyebrow"}, {"id": 1, "value": 0.0074861810587983964, "label": "like honey deception"}, {"id": 2, "value": 0.007068779850449592, "label": "old lie"}, {"id": 3, "value": 0.006406960705343176, "label": "what kind"}, {"id": 4, "value": 0.006386751545654837, "label": "cute little fluffy pet kitten coco"}, {"id": 5, "value": 0.006366603136112095, "label": "coworker extrovert lie"}, {"id": 6, "value": 0.005918433556084168, "label": "white lie"}, {"id": 7, "value": 0.005341180887444249, "label": "revenue deception cost billion"}, {"id": 8, "value": 0.005306595186609417, "label": "look"}, {"id": 9, "value": 0.004725839339944989, "label": "all"}, {"id": 10, "value": 0.00462040735876155, "label": "sign language coco"}, {"id": 11, "value": 0.004591476877940532, "label": "genius identity thief world"}];
+        var adjmat = [{"from": 0, "to": 1, "value": 0.218432352659743}, {"from": 0, "to": 2, "value": 0.14702572344900777}, {"from": 0, "to": 3, "value": 0.24343694720180142}, {"from": 0, "to": 4, "value": 0.3061396806492102}, {"from": 0, "to": 5, "value": 0.21980478316331617}, {"from": 0, "to": 6, "value": 0.21440852497204893}, {"from": 0, "to": 7, "value": 0.08753837415561204}, {"from": 0, "to": 8, "value": 0.310856559431247}, {"from": 0, "to": 9, "value": 0.1064769094051878}, {"from": 0, "to": 10, "value": 0.20239819379724994}, {"from": 0, "to": 11, "value": 0.1723575768098336}, {"from": 1, "to": 2, "value": 0.5831492407449587}, {"from": 1, "to": 3, "value": 0.6503337130692388}, {"from": 1, "to": 4, "value": 0.5076836973816161}, {"from": 1, "to": 5, "value": 0.44179982901738213}, {"from": 1, "to": 6, "value": 0.6215573749353334}, {"from": 1, "to": 7, "value": 0.4165244423934769}, {"from": 1, "to": 8, "value": 0.478071821547438}, {"from": 1, "to": 9, "value": 0.49365590409230004}, {"from": 1, "to": 10, "value": 0.43556181445689546}, {"from": 1, "to": 11, "value": 0.5509338938863674}, {"from": 2, "to": 3, "value": 0.5907825128071829}, {"from": 2, "to": 4, "value": 0.4528924310529909}, {"from": 2, "to": 5, "value": 0.5302441324739201}, {"from": 2, "to": 6, "value": 0.7488836425699438}, {"from": 2, "to": 7, "value": 0.33044202849160037}, {"from": 2, "to": 8, "value": 0.5095517495968508}, {"from": 2, "to": 9, "value": 0.5213926827472691}, {"from": 2, "to": 10, "value": 0.4093555405649922}, {"from": 2, "to": 11, "value": 0.5091029638723162}, {"from": 3, "to": 4, "value": 0.47272806209591567}, {"from": 3, "to": 5, "value": 0.45632638171224166}, {"from": 3, "to": 6, "value": 0.519563605326232}, {"from": 3, "to": 7, "value": 0.4191420015465545}, {"from": 3, "to": 8, "value": 0.7077031331565099}, {"from": 3, "to": 9, "value": 0.6558019813867673}, {"from": 3, "to": 10, "value": 0.49110444883680976}, {"from": 3, "to": 11, "value": 0.6225123468089955}, {"from": 4, "to": 5, "value": 0.3537164158530854}, {"from": 4, "to": 6, "value": 0.48486724542479354}, {"from": 4, "to": 7, "value": 0.1266379209589682}, {"from": 4, "to": 8, "value": 0.4911253295830143}, {"from": 4, "to": 9, "value": 0.3521144207210078}, {"from": 4, "to": 10, "value": 0.4863747654220165}, {"from": 4, "to": 11, "value": 0.3189614258340364}, {"from": 5, "to": 6, "value": 0.48208905128490115}, {"from": 5, "to": 7, "value": 0.17033076569157635}, {"from": 5, "to": 8, "value": 0.29386401492857134}, {"from": 5, "to": 9, "value": 0.22454044968752115}, {"from": 5, "to": 10, "value": 0.26344327605622136}, {"from": 5, "to": 11, "value": 0.4620443028503209}, {"from": 6, "to": 7, "value": 0.2925969872533215}, {"from": 6, "to": 8, "value": 0.5250735539197284}, {"from": 6, "to": 9, "value": 0.46445261140882405}, {"from": 6, "to": 10, "value": 0.42285135988175043}, {"from": 6, "to": 11, "value": 0.4647288309810989}, {"from": 7, "to": 8, "value": 0.2829181845950666}, {"from": 7, "to": 9, "value": 0.3746751758577833}, {"from": 7, "to": 10, "value": 0.22350112573584643}, {"from": 7, "to": 11, "value": 0.39379427245024395}, {"from": 8, "to": 9, "value": 0.5507425715579422}, {"from": 8, "to": 10, "value": 0.3908566444260834}, {"from": 8, "to": 11, "value": 0.44074478341214346}, {"from": 9, "to": 10, "value": 0.35467807635838244}, {"from": 9, "to": 11, "value": 0.43583993898663914}, {"from": 10, "to": 11, "value": 0.3848828442341382}];
+
+        function draw() {
+            // create concepts
+            // value corresponds with importance of concepts
+            nodes = freqmap;
+
+            // create connections between concepts
+            // value corresponds with the relevance between people
+            edges = adjmat;
+
+            // Instantiate our network object.
+            var container = document.getElementById("mynetwork");
+            var data = {
+                nodes: nodes,
+                edges: edges
+            };
+            var options = {
+                nodes: {
+                    shape: "box",
+                    color: {
+                        background: "#303030",
+                        hover: "#555555",
+                        highlight: {
+                            background: "#222222",
+                            border: "#FFF255"
+                        }
+                    },
+                    shadow: {
+                        enabled: true
+                    },
+                    //font.color: "#000000",
+                    font: {
+                        color: "#D0D0D0",
+                    },
+                    scaling: {
+                        customScalingFunction: function(min, max, total, value) {
+                            return value / total;
+                        },
+                        min: 5,
+                        max: 100
+                    },
+                    mass: 1.5
+                },
+                edges: {
+                    color: {
+                        //color:'#848484',
+                        highlight: '#848484',
+                        hover: '#d3d2cd',
+                        inherit: false,
+                        opacity: 1.0
+                    },
+                    shadow: {
+                        enabled: true
+                    }
+                },
+                interaction: {
+                    hover: true
+                }
+            };
+            network = new vis.Network(container, data, options);
+        }
+        window.addEventListener("load", () => {
+            draw();
+        });
+
+        //var js_thing = JSON.parse(jsonthing);
+        //var nodes = new vis.DataSet(eval(freqmap));
+        /*var valList = [];
+        for (var i = 0; i < js_thing.mapping.length; i++) {
+          valList.push(js_thing.mapping[i]);
+        }*/
+        //var json_data = {"dog":1, "cat":7, "pet":3, "giraffe":40, "starfish":200};
+        /*var txt = [{id: 1, value: 35, label: "dog"},
+        {id: 2, value: 12, label: "cat"},
+        {id: 3, value: 333, label: "pet"},
+        {id: 4, value: 67, label: "giraffe"},
+        {id: 5, value: 55, label: "starfish"}];
+        //var arr = JSON.parse(txt);
+
+        var nodes = new vis.DataSet(txt);*/
+        /*var array = [
+          {id: 1, value: 35, label: "dog"},
+          {id: 2, value: 12, label: "cat"},
+          {id: 3, value: 333, label: "pet"},
+          {id: 4, value: 67, label: "giraffe"},
+          {id: 5, value: 55, label: "starfish"}
+        ];
+
+        var nodes = new vis.DataSet(array);*/
+
+        //var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
+        //var edges = new vis.DataSet(eval(adjmat));
+
+        /* this function is not used
+        function nodes(relev) {
+          var result = [];
+          var count = 1;
+          for (var i in relev) {
+            result.push({id: count, value: relev[i], label: i});
+            count++;
+          }
+        }*/
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

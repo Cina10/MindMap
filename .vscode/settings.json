@@ -1,3 +1,11 @@
 {
-    "python.pythonPath": "/home/allen/Programs/anaconda3/envs/mindmap/bin/python"
+    "python.pythonPath": "/home/allen/Programs/anaconda3/envs/mindmap/bin/python",
+    "spellright.language": [
+        "en_US"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ]
 }

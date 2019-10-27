@@ -46,6 +46,7 @@ def run(gs_file_uri, title, num_keywords, searchword, dry_run=False, dry_run_fil
     (nodes_list, edges_list) = generate_json_pair(kw_w_pairs, sim_mat)
 
     replacement_map = {
+        "MINDMAP_TITLE_MATCH": title,
         "MINDMAP_SEARCH_WORD_MATCH": searchword,
         "MINDMAP_MOST_RELEVANT_MATCH": match_kw,
         "MINDMAP_BEST_MATCH_SCORE": "{0:.0%}".format(match_score),

@@ -27,14 +27,14 @@
       }
       #userinputinfo {
         width: 27%;
-        height: 100vh;
+        height: 45em;
         text-indent: 5%;
         padding: 0;
         float: left;
         background-color: #303030;
       }
       h1 {
-        color: #505050;
+        color: gray;
         font-size: 4em;
         margin: 0;
       }
@@ -178,8 +178,8 @@
     //(or something like that; I don't know proper terminology)
     //  var freqmap = [{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 17, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 16, label: "starfish"}];
     //  var adjmat = [{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}];
-        var freqmap = MINDMAP_FREQMAP_MATCH
-        var adjmat = MINDMAP_ADJMAT_MATCH
+        var freqmap = [{"id": 0, "value": 0.04107765053717615, "label": "tree transport water"}, {"id": 1, "value": 0.03597941187430427, "label": "liquid pressure mouth gas pressure"}, {"id": 2, "value": 0.030725172127481416, "label": "like tube tree"}, {"id": 3, "value": 0.027295472015855495, "label": "water molecule"}, {"id": 4, "value": 0.02502438956103211, "label": "continuous water column"}, {"id": 5, "value": 0.024042070995887718, "label": "way water"}, {"id": 6, "value": 0.023591943451512894, "label": "diameter water"}, {"id": 7, "value": 0.022810759360608925, "label": "water boundary"}, {"id": 8, "value": 0.022757498889400905, "label": "soil water"}, {"id": 9, "value": 0.022729647346836527, "label": "water interface"}]
+        var adjmat = [{"from": 0, "to": 1, "value": 0.5763514258581601}, {"from": 0, "to": 2, "value": 0.6944433532839482}, {"from": 0, "to": 3, "value": 0.6858052277685492}, {"from": 0, "to": 4, "value": 0.6567699063052252}, {"from": 0, "to": 5, "value": 0.7914881482969788}, {"from": 0, "to": 6, "value": 0.6638089783322119}, {"from": 0, "to": 7, "value": 0.7226145168093374}, {"from": 0, "to": 8, "value": 0.761854253822788}, {"from": 0, "to": 9, "value": 0.7067891645340518}, {"from": 1, "to": 2, "value": 0.5374169538087984}, {"from": 1, "to": 3, "value": 0.6291493690274654}, {"from": 1, "to": 4, "value": 0.6678332702406776}, {"from": 1, "to": 5, "value": 0.690699347473533}, {"from": 1, "to": 6, "value": 0.6559531270474747}, {"from": 1, "to": 7, "value": 0.6232009947894984}, {"from": 1, "to": 8, "value": 0.6193341080241822}, {"from": 1, "to": 9, "value": 0.5991519984454263}, {"from": 2, "to": 3, "value": 0.47841259805075376}, {"from": 2, "to": 4, "value": 0.5127623659512127}, {"from": 2, "to": 5, "value": 0.6114830299466385}, {"from": 2, "to": 6, "value": 0.5677665327510356}, {"from": 2, "to": 7, "value": 0.46476882245611073}, {"from": 2, "to": 8, "value": 0.49289183147598303}, {"from": 2, "to": 9, "value": 0.49822861011946656}, {"from": 3, "to": 4, "value": 0.6408534854642507}, {"from": 3, "to": 5, "value": 0.6981462221277278}, {"from": 3, "to": 6, "value": 0.674915301487146}, {"from": 3, "to": 7, "value": 0.6805099302376649}, {"from": 3, "to": 8, "value": 0.6860788064365997}, {"from": 3, "to": 9, "value": 0.6630127101860074}, {"from": 4, "to": 5, "value": 0.7271211722028157}, {"from": 4, "to": 6, "value": 0.6994204774066249}, {"from": 4, "to": 7, "value": 0.7248323202393737}, {"from": 4, "to": 8, "value": 0.7004696195273036}, {"from": 4, "to": 9, "value": 0.6828722738541488}, {"from": 5, "to": 6, "value": 0.6877357976926652}, {"from": 5, "to": 7, "value": 0.7782886501547708}, {"from": 5, "to": 8, "value": 0.7989283712615826}, {"from": 5, "to": 9, "value": 0.7400127383406595}, {"from": 6, "to": 7, "value": 0.6991100204947077}, {"from": 6, "to": 8, "value": 0.7108763711960739}, {"from": 6, "to": 9, "value": 0.6396931924845223}, {"from": 7, "to": 8, "value": 0.7705864710458658}, {"from": 7, "to": 9, "value": 0.6828992045382393}, {"from": 8, "to": 9, "value": 0.6528525485330587}]
     
     function draw() {
       // create concepts
@@ -200,12 +200,8 @@
         nodes: {
           shape: "dot",
           color: {
-            background: "#92E5FF",
-            hover: "#4FD5FF",
-            highlight : {
-              background: "#FFF9AF",
-              border: "#FFF255"
-            }
+            background: "#88C7FF",
+            hover: "#B1DAFF"
           },
           //font.color: "#000000",
           font: {

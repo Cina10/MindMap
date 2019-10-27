@@ -14,93 +14,96 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <style type="text/css">
-      * {
-
-      }
-      #mynetwork {
-        width: 65%;
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-        float: right;
-        background-color: transparent;
-      }
-      #userinputinfo {
-        width: 35%;
-        height: 100vh;
-        text-indent: 0%;
-        padding: 30px;
-        float: left;
-        background-color: #303030;
-      }
-      body {
-        background-color: #1f1f1f;
-      }
-      h1 {
-        color: #909090;
-        font-size: 4em;
-        margin: 0;
-      }
-      h2 {
-        color: #BFBFBF;
-        margin: 0;
-        font-size: 1.5em;
-        background-color: #303030;
-        padding-bottom: 0.2em;
-      }
-      p {
-        color: #999999;
-        font-size: 1.2em;
-        background-color: #303030;
-      }
-      .header {
-        text-align: center;
-        height: 6em;
-        padding-top: 1em;
-      }
-      /*
-      textarea{
-        border: 0px;
-        margin-left: 2em;
-        width: 90%;
-      }
-      h5{
-        font-size:1.2em;
-        color: white;
-      }
-      .ind {
-        text-indent: 1%;
-      }
-      .gridder{
-        display: grid;
-        grid-template-columns: 75% 25%;
-        grid-gap: 0.5%;
-      }
-      .box1{
-        background:lightskyblue;
-      }
-      .box2{
-        background:lightsteelblue;
-      }
-      .box3{
-        background:lightblue;
-        grid-row: 1/3;
-        padding: auto;
-      }
-      */
+        * {}
+        
+        #mynetwork {
+            width: 65%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            float: right;
+            background-color: transparent;
+        }
+        
+        #userinputinfo {
+            width: 35%;
+            height: 100vh;
+            text-indent: 0%;
+            padding: 30px;
+            float: left;
+            background-color: #303030;
+        }
+        
+        body {
+            background-color: #1f1f1f;
+        }
+        
+        h1 {
+            color: #909090;
+            font-size: 4em;
+            margin: 0;
+        }
+        
+        h2 {
+            color: #BFBFBF;
+            margin: 0;
+            font-size: 1.5em;
+            background-color: #303030;
+            padding-bottom: 0.2em;
+        }
+        
+        p {
+            color: #999999;
+            font-size: 1.2em;
+            background-color: #303030;
+        }
+        
+        .header {
+            text-align: center;
+            height: 6em;
+            padding-top: 1em;
+        }
+        /*
+		      textarea{
+		        border: 0px;
+		        margin-left: 2em;
+		        width: 90%;
+		      }
+		      h5{
+		        font-size:1.2em;
+		        color: white;
+		      }
+		      .ind {
+		        text-indent: 1%;
+		      }
+		      .gridder{
+		        display: grid;
+		        grid-template-columns: 75% 25%;
+		        grid-gap: 0.5%;
+		      }
+		      .box1{
+		        background:lightskyblue;
+		      }
+		      .box2{
+		        background:lightsteelblue;
+		      }
+		      .box3{
+		        background:lightblue;
+		        grid-row: 1/3;
+		        padding: auto;
+		      }
+		      */
     </style>
 </head>
 
-  <body>
+<body>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <div id='stars'></div>
     <div id='stars2'></div>
     <div id='stars3'></div>
     <div class="header">
-      <h1>MindMap: MINDMAP_TITLE_MATCH</h1>
+        <h1>MindMap: MINDMAP_TITLE_MATCH</h1>
     </div>
-
-
     <!-- nav
     <nav class="navbar-inverse">
         <div class="container-fluid">
@@ -110,28 +113,22 @@
         </div>
     </nav>
     -->
-
     <!-- network graphic -->
     <div id="mynetwork" height="500px"></div>
-
     <!-- additional information -->
     <div id="userinputinfo">
-      <!-- Need actual words to fill this part -->
-      <br>
-      <h2>Search word: MINDMAP_SEARCH_WORD_MATCH</h2>
-      <br>
-      <br>
-      <h2>Most relevant: MINDMAP_MOST_RELEVANT_MATCH</h2>
-      <br>
-      <br>
-      <h2>Transcription:</h2>
-      <!-- Transcription in p tags -->
-      <p>MINDMAP_TRANSCRIPTION_MATCH</p>
+        <!-- Need actual words to fill this part -->
+        <br>
+        <h2>Search word: MINDMAP_SEARCH_WORD_MATCH</h2>
+        <br>
+        <br>
+        <h2>Most relevant: MINDMAP_MOST_RELEVANT_MATCH</h2>
+        <br>
+        <br>
+        <h2>Transcription:</h2>
+        <!-- Transcription in p tags -->
+        <p>MINDMAP_TRANSCRIPTION_MATCH</p>
     </div>
-
-
-
-
     <!-- input forms -->
     <!--
     <div class="gridder">
@@ -159,78 +156,89 @@
           </form>
           <br>
       </div>
-    -->
-
-    </div>
-
-<!--
+    --></div>
+    <!--
     <script>
     function showTranscript() {
       document.getElementById("transcription").innerHTML = "This should be a transcription of the video. Thanks.";
     }
     </script>
 -->
-
     <script type="text/javascript">
         var nodes = null;
         var edges = null;
         var network = null;
 
-    //these two variables should later be replaced by variable input
-    //(or something like that; I don't know proper terminology)
-    //  var freqmap = [{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 17, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 16, label: "starfish"}];
-    //  var adjmat = [{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}];
+        //these two variables should later be replaced by variable input
+        //(or something like that; I don't know proper terminology)
+        //  var freqmap = [{id: 1, value: 35, label: "dog"}, {id: 2, value: 12, label: "cat"}, {id: 3, value: 17, label: "pet"}, {id: 4, value: 6, label: "giraffe"}, {id: 5, value: 16, label: "starfish"}];
+        //  var adjmat = [{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}];
         var freqmap = MINDMAP_FREQMAP_MATCH;
         var adjmat = MINDMAP_ADJMAT_MATCH;
 
-    function draw() {
-      // create concepts
-      // value corresponds with importance of concepts
-      nodes = freqmap;
+        function draw() {
+            // create concepts
+            // value corresponds with importance of concepts
+            nodes = freqmap;
 
-      // create connections between concepts
-      // value corresponds with the relevance between people
-      edges = adjmat;
+            // create connections between concepts
+            // value corresponds with the relevance between people
+            edges = adjmat;
 
-      // Instantiate our network object.
-      var container = document.getElementById("mynetwork");
-      var data = {
-        nodes: nodes,
-        edges: edges
-      };
-      var options = {
-        nodes: {
-          shape: "dot",
-          color: {
-            background: "#92E5FF",
-            hover: "#4FD5FF",
-            highlight : {
-              background: "#FFF9AF",
-              border: "#FFF255"
-            }
-          },
-          //font.color: "#000000",
-          font: {
-            color: "#D0D0D0",
-          },
-          scaling: {
-            customScalingFunction: function(min, max, total, value) {
-              return value / total;
-            },
-            min: 5,
-            max: 150
-          }
-        },
-        interaction: {hover: true}
-      };
-      network = new vis.Network(container, data, options);
-    }
-      window.addEventListener("load", () => {
-        draw();
-      });
-    
-
-
+            // Instantiate our network object.
+            var container = document.getElementById("mynetwork");
+            var data = {
+                nodes: nodes,
+                edges: edges
+            };
+            var options = {
+                nodes: {
+                    shape: "box",
+                    color: {
+                        background: "#303030",
+                        hover: "#555555",
+                        highlight: {
+                            background: "#222222",
+                            border: "#FFF255"
+                        }
+                    },
+                    shadow: {
+                        enabled: true
+                    },
+                    //font.color: "#000000",
+                    font: {
+                        color: "#D0D0D0",
+                    },
+                    scaling: {
+                        customScalingFunction: function(min, max, total, value) {
+                            return value / total;
+                        },
+                        min: 5,
+                        max: 100
+                    },
+                    mass: 1.5
+                },
+                edges: {
+                    color: {
+                        //color:'#848484',
+                        highlight: '#848484',
+                        hover: '#d3d2cd',
+                        inherit: false,
+                        opacity: 1.0
+                    },
+                    shadow: {
+                        enabled: true
+                    }
+                },
+                interaction: {
+                    hover: true
+                }
+            };
+            network = new vis.Network(container, data, options);
+        }
+        window.addEventListener("load", () => {
+            draw();
+        });
 
         //var js_thing = JSON.parse(jsonthing);
         //var nodes = new vis.DataSet(eval(freqmap));
@@ -260,19 +268,19 @@
         //var adjmat = '[{from: 1, to: 3, value: 1},{from: 1, to: 2, value: 8},{from: 2, to: 4, value: 4},{from: 2, to: 5, value: 2},{from: 3, to: 3, value: 2},{from: 1, to: 5, value: 5}]';
         //var edges = new vis.DataSet(eval(adjmat));
 
-    /* this function is not used
-    function nodes(relev) {
-      var result = [];
-      var count = 1;
-      for (var i in relev) {
-        result.push({id: count, value: relev[i], label: i});
-        count++;
-      }
-    }*/
+        /* this function is not used
+        function nodes(relev) {
+          var result = [];
+          var count = 1;
+          for (var i in relev) {
+            result.push({id: count, value: relev[i], label: i});
+            count++;
+          }
+        }*/
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
 
-      </script>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </body>
-  </html>
+</html>
